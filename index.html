@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overview · PetPet Theme Documentation</title>
+<meta name="description" content="What PetPet Theme is, what it needs, and where to go next.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Overview · PetPet Theme Documentation">
+<meta property="og:description" content="What PetPet Theme is, what it needs, and where to go next.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://github-oneyue.github.io/petpet-theme-docs/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/pf-dmsans-001.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/pf-iserif-003.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/docs.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <a class="topbar__brand" href="index.html"><b>PetPet</b><span>Theme documentation</span></a>
+  <div class="topbar__spacer"></div>
+  <div class="topbar__links">
+    <span class="pill" title="Documentation build">v1.0.2</span>
+    <a class="pill" href="support.html">Support</a>
+    <a class="pill pill--ink" href="https://github.com/github-oneyue/petpet-theme-docs">GitHub</a>
+    <button id="navToggle" type="button" aria-expanded="false" aria-controls="sidebar">Contents</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+    <div class="sidebar__inner">
+    <div class="sidebar__group">
+      <p class="sidebar__label">Start here</p>
+      <ul>
+        <li><a href="index.html" aria-current="page">Overview</a></li>
+        <li><a href="install.html">Installation</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <p class="sidebar__label">Reference</p>
+      <ul>
+        <li><a href="settings.html">Theme settings</a></li>
+        <li><a href="sections.html">Sections</a></li>
+        <li><a href="products.html">Product & cart</a></li>
+        <li><a href="accounts.html">Customer accounts</a></li>
+        <li><a href="typography.html">Typography & fonts</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <p class="sidebar__label">Help</p>
+      <ul>
+        <li><a href="faq.html">FAQ & troubleshooting</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+
+  <main class="content" id="main">
+<p class="eyebrow">PetPet Theme · v1.0.2</p>
+<h1>A digital wardrobe for pets who dress well.</h1>
+<p class="lede">PetPet Theme is a Shopify Online Store 2.0 theme built around one idea: let a customer browse complete looks instead of a wall of products. This manual covers what the theme does, how to install it, every setting it exposes, and what to check when something looks wrong.</p>
+
+<dl class="meta-list">
+  <dt>Version</dt><dd>1.0.2</dd>
+  <dt>Platform</dt><dd>Shopify, Online Store 2.0 with JSON templates</dd>
+  <dt>Sections</dt><dd>31 in total — 13 of them are home-page sections, numbered 01 to 13</dd>
+  <dt>Templates</dt><dd>12 JSON templates, 7 customer account templates, gift card, password</dd>
+  <dt>Apps</dt><dd>None required. Storefront filters use Shopify's own Search &amp; Discovery app, which is free</dd>
+  <dt>Fonts</dt><dd>Shopify font pickers by default; four typefaces bundled under SIL OFL 1.1</dd>
+</dl>
+
+<h2 id="start-here">Start here</h2>
+<ul class="cards">
+  <li><a href="install.html"><b>Installation</b><span>Upload, publish, then connect menus, pages and collections.</span></a></li>
+  <li><a href="settings.html"><b>Theme settings</b><span>The seven global groups, setting by setting, with defaults.</span></a></li>
+  <li><a href="sections.html"><b>Section reference</b><span>All 31 sections and the fields each one exposes.</span></a></li>
+  <li><a href="products.html"><b>Product &amp; cart</b><span>Block order, variants, structured data, the cart drawer.</span></a></li>
+  <li><a href="accounts.html"><b>Customer accounts</b><span>The seven account templates and how they behave.</span></a></li>
+  <li><a href="typography.html"><b>Typography</b><span>Font pickers, the bundled typefaces, the type scale.</span></a></li>
+  <li><a href="faq.html"><b>FAQ</b><span>Demo content, missing filters, saved items, and other oddities.</span></a></li>
+  <li><a href="support.html"><b>Support</b><span>How to reach us and what to include in a request.</span></a></li>
+</ul>
+
+<h2 id="what-the-theme-is-built-around">What the theme is built around</h2>
+<p>Most fashion themes assume the product is the unit of shopping. Pet clothing works differently: people choose an outfit for an occasion, then discover the individual pieces inside it. The theme leans into that.</p>
+<ul>
+  <li><strong>Look-first browsing.</strong> The runway section steps through complete outfits with the keyboard, the scroll wheel or a drag. Each look carries its own scene — a tea party, a rainy day walk — and its own three pieces.</li>
+  <li><strong>Saving without an account.</strong> Customers can mark looks as saved and come back to them on the same device. Nothing is stored on your server and no login is required.</li>
+  <li><strong>Shopify owns the data.</strong> Prices, variants, stock, images and tax behaviour all come from your products. The theme has no duplicate product settings to keep in sync, so editing a product in admin changes the storefront immediately.</li>
+  <li><strong>Complete before you add content.</strong> Sections that need imagery fall back to bundled photographs, and the two product sections can render demo pieces. A fresh install looks finished, which makes it easier to judge the design before you upload anything.</li>
+</ul>
+
+<h2 id="what-it-needs-from-your-store">What it needs from your store</h2>
+<p>The theme runs on any Shopify plan that supports Online Store 2.0, which is every plan today. Beyond that it expects:</p>
+<ul>
+  <li><strong>Products with images and prices</strong> — the grids and the product page read from them directly.</li>
+  <li><strong>At least one navigation menu</strong> for the header. Menus are created in <em>Online Store → Navigation</em>, not inside the theme.</li>
+  <li><strong>Collections</strong> if you want the look grids driven by merchandising rather than a hand-picked product list.</li>
+  <li><strong>More than one country or language</strong> before the footer selectors appear — a single-country store shows no selector at all, by design.</li>
+</ul>
+
+<div class="note">
+<strong>Not included</strong>
+<p>No apps, no review widgets, no popup builders, no page builder. Every element you see is part of the theme. If you need reviews or upsells, install those apps separately; the theme does not reserve space for them.</p>
+</div>
+
+<h2 id="demo-content-and-replacing-it">Demo content, and replacing it</h2>
+<p>Two home-page sections — <em>Featured looks</em> and <em>Product grid</em> — have a <code>source</code> setting with two useful values: <code>demo</code> and <code>collection</code> (or a hand-picked product list). Out of the box both are set to <code>demo</code>, which renders bundled sample pieces so the layout can be evaluated before your catalogue exists.</p>
+<p>When you are ready to sell, switch <code>source</code> to a collection or a product list. The demo pieces disappear completely — they are not products, they cannot be added to a cart, and they never appear in search or on collection pages.</p>
+
+<div class="warn">
+<strong>Before you publish</strong>
+<p>Leaving a section on <code>demo</code> in a live store means customers see items they cannot buy. Walk the home page once with the theme editor open and confirm every grid is pointing at real products.</p>
+</div>
+
+<h2 id="where-to-go-next">Where to go next</h2>
+<ol class="steps">
+  <li><b>Install and publish</b><span>Upload the theme, preview it, then publish. <a href="install.html">Installation →</a></span></li>
+  <li><b>Connect your content</b><span>Menus, collections, the contact page, and the country selector. Also in <a href="install.html">Installation</a>.</span></li>
+  <li><b>Set the brand</b><span>Logo, colours, fonts and the type scale. <a href="settings.html">Theme settings →</a></span></li>
+  <li><b>Fine-tune sections</b><span>Copy, images and the order of the home page. <a href="sections.html">Section reference →</a></span></li>
+</ol>
+    <div class="pager"><span></span><a class="pager__next" href="install.html"><span>Next</span>Installation</a></div>
+  </main>
+
+  <aside class="toc" aria-label="On this page">
+    <p class="toc__label">On this page</p>
+    <ul>
+      <li><a href="#start-here">Start here</a>
+      </li>
+      <li><a href="#what-the-theme-is-built-around">What the theme is built around</a>
+      </li>
+      <li><a href="#what-it-needs-from-your-store">What it needs from your store</a>
+      </li>
+      <li><a href="#demo-content-and-replacing-it">Demo content, and replacing it</a>
+      </li>
+      <li><a href="#where-to-go-next">Where to go next</a>
+      </li>
+    </ul>
+  </aside>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <span class="site-footer__script">Dressed with love.</span>
+    <span>PetPet Theme v1.0.2 — documentation for Shopify Online Store 2.0.</span>
+    <span>Fonts bundled under SIL OFL 1.1 · <a href="assets/PF-FONT-LICENSES.txt">licences</a></span>
+    <span style="margin-left:auto"><a href="support.html">Support</a> · <a href="changelog.html">Changelog</a> · <a href="https://github.com/github-oneyue/petpet-theme-docs">Repository</a></span>
+  </div>
+</footer>
+
+<script src="assets/docs.js"></script>
+</body>
+</html>
