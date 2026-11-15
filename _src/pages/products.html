@@ -1,0 +1,85 @@
+<p class="eyebrow">Reference</p>
+<h1>Product page and cart</h1>
+<p class="lede">The product template is assembled from blocks, which means the order of the page is yours to change in the editor rather than in code. This page covers that order, the variant picker, structured data and how the cart drawer decides to open.</p>
+
+<h2>Block order</h2>
+<p>Everything below is a block inside the <em>Product</em> section. Up to 30 blocks are allowed; the single-use blocks are marked with their limit. The shipped order is vendor, title, price, variant picker, buy buttons, stock, details, share.</p>
+
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Block</th><th>What it renders</th><th>Own settings</th></tr></thead>
+    <tbody>
+      <tr><td><code>vendor</code></td><td>The product vendor as a small caption above the title. Single use.</td><td>—</td></tr>
+      <tr><td><code>title</code></td><td>The product title as the page's <code>h1</code>. Single use.</td><td>—</td></tr>
+      <tr><td><code>price</code></td><td>Price, compare-at price, and the sale badge. Single use.</td><td><code>show_badge</code>, <code>show_unit_price</code></td></tr>
+      <tr><td><code>options</code></td><td>The variant picker. Renders dropdowns, or swatches when the option is mapped to a swatch. Single use.</td><td><code>swatch_option</code></td></tr>
+      <tr><td><code>buy_buttons</code></td><td>Add to bag, quantity, and the dynamic checkout button. Single use.</td><td><code>show_quantity</code>, <code>show_payment_button</code></td></tr>
+      <tr><td><code>stock</code></td><td>In-stock or sold-out line, driven by the variant's inventory policy. Single use.</td><td><code>in_stock_text</code>, <code>out_stock_text</code></td></tr>
+      <tr><td><code>description</code></td><td>The product description, optionally truncated with a "read more" toggle. Single use.</td><td><code>truncate</code></td></tr>
+      <tr><td><code>details</code></td><td>The accordion rows: description, shipping and returns, and specifications. Single use.</td><td><code>show_description_row</code>, <code>show_shipping</code>, <code>shipping_text</code>, <code>show_spec</code></td></tr>
+      <tr><td><code>selling_plan</code></td><td>Subscription or pre-order options, when the product has selling plans. Single use.</td><td>—</td></tr>
+      <tr><td><code>pickup</code></td><td>Local pickup availability for the selected variant. Single use.</td><td>—</td></tr>
+      <tr><td><code>share</code></td><td>Share links for the product. Single use.</td><td>—</td></tr>
+      <tr><td><code>text</code></td><td>Free text block — sizing notes, care instructions, a styling tip. Repeatable.</td><td><code>text</code></td></tr>
+      <tr><td><code>custom_liquid</code></td><td>Your own Liquid. Repeatable.</td><td><code>custom_liquid</code></td></tr>
+      <tr><td><code>@app</code></td><td>Blocks injected by installed apps. Repeatable.</td><td>Defined by the app</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="note">
+<strong>One of each</strong>
+<p>Single-use blocks cannot be duplicated in the editor — the button is simply absent. If you need the same content twice, use a <code>text</code> block instead of a second title or description.</p>
+</div>
+
+<h2>Variants, stock and prices</h2>
+<p>None of this is stored in the theme. The variant picker reads <code>product.options</code>; the price block reads the selected variant's <code>price</code> and <code>compare_at_price</code>; the stock block reads <code>inventory_quantity</code> and <code>inventory_policy</code>. Practical consequences:</p>
+<ul>
+  <li>A variant that continues selling at zero stock shows the in-stock line, because Shopify allows the sale. That is Shopify's rule, not the theme's.</li>
+  <li>Unit prices appear only when the product has a unit price measurement set in admin.</li>
+  <li>Changing a price in admin changes the storefront without touching the theme.</li>
+</ul>
+
+<h2>Structured data</h2>
+<p>The product section outputs Product JSON-LD so search engines can read price, availability and currency. It is on by default (<code>show_jsonld</code>). Leave it on unless another app is already emitting Product markup — two competing blocks of JSON-LD on one page is worse than none.</p>
+
+<h2>Related pieces</h2>
+<p><code>show_related</code> adds a strip of products from the same collection below the product, with <code>related_limit</code> controlling how many. Shopify chooses which products; the theme only decides how they look. On a product that belongs to no collection, the strip does not render.</p>
+
+<h2>The cart drawer</h2>
+<p>With <code>enable_cart_drawer</code> on, adding a product posts to Shopify's cart API and opens a drawer instead of navigating away. The drawer lists line items with quantity steppers, a subtotal, and a link to the full cart page.</p>
+<p>The bag icon in the header always links to <code>/cart</code>. That is deliberate: the drawer is an accelerator, not a replacement, and it must be possible to reach the cart with a keyboard and with JavaScript disabled.</p>
+
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Behaviour</th><th>Where it is decided</th></tr></thead>
+    <tbody>
+      <tr><td>Drawer opens after add to bag</td><td><code>enable_cart_drawer</code> in <a href="settings.html#cart-and-checkout">Cart and checkout</a></td></tr>
+      <tr><td>Drawer suppressed entirely</td><td>Same setting off — the product form falls back to a normal post to <code>/cart</code></td></tr>
+      <tr><td>Quantity steppers inside the drawer</td><td>Always present; they call the cart change endpoint and re-render the drawer</td></tr>
+      <tr><td>Checkout button</td><td>Shopify's own, with whatever payment methods the store has enabled</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Cart page</h2>
+<p>The cart page is a separate template and stays reachable regardless of the drawer. Its settings are copy only — heading, subheading, the empty-bag message, and an optional note about how checkout is handled.</p>
+<p><code>show_note</code> toggles the note block; <code>note</code> is the text inside it. Keep that text factual: it sits directly above the checkout button, where customers are most likely to read it.</p>
+
+<h2>Product settings that are not blocks</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Setting</th><th>Effect</th></tr></thead>
+    <tbody>
+      <tr><td><code>stock_text</code></td><td>Fallback in-stock label used when the stock block has no custom text. Defaults to "In stock · ships in 2–4 working days".</td></tr>
+      <tr><td><code>show_jsonld</code></td><td>Emits Product structured data. On by default.</td></tr>
+      <tr><td><code>show_related</code></td><td>Shows the related-pieces strip.</td></tr>
+      <tr><td><code>related_limit</code></td><td>How many related products to show, 1 to 12.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="tip">
+<strong>Two global settings also land here</strong>
+<p>The product page reads <code>pdp_stock_text</code> and <code>pdp_shipping_text</code> from <a href="settings.html#product-and-details">Product and details</a> for its shipping accordion, so the same sentence appears on the home-page product panel and on every product page. Edit it once, in the global settings.</p>
+</div>

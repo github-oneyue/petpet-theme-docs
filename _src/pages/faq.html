@@ -1,0 +1,73 @@
+<p class="eyebrow">Help</p>
+<h1>FAQ and troubleshooting</h1>
+<p class="lede">The questions that come up most often, answered with what is actually happening rather than "clear your cache". If yours is not here, <a href="support.html">write to us</a>.</p>
+
+<h2>Content and demo data</h2>
+
+<h3>My grids show clothes I never added</h3>
+<p><em>Featured looks</em> and <em>Product grid</em> both have a <code>source</code> setting. It ships as <code>demo</code>, which renders bundled sample pieces. Open the section in the editor and switch the source to a collection or a hand-picked product list. The demo pieces then disappear entirely — they are not products and cannot be purchased.</p>
+
+<h3>Can I delete the bundled photographs?</h3>
+<p>You can, but sections that fall back to them will then render an empty frame. The cleaner route is to upload your own images in each section's image picker; a picked image always wins over the bundled one. Every bundled asset is a normal file in <code>assets/</code> if you do want to remove them.</p>
+
+<h3>A section I added is not in the "Add section" list on some pages</h3>
+<p>Home-page sections only appear when the home page is being edited, and product or collection sections only appear on those templates. This is how Shopify scopes sections; it is not a missing section.</p>
+
+<h2>Storefront behaviour</h2>
+
+<h3>The collection filters are missing</h3>
+<p><code>show_filters</code> on the collection template uses Shopify's own storefront filtering, which needs the free <strong>Search &amp; Discovery</strong> app installed and at least one filter configured for that collection. Without it the filter rail has nothing to render and stays hidden.</p>
+
+<h3>The quick filters on the product grid do not find everything</h3>
+<p>Those filter the cards already rendered on the page — they are a convenience, not a search. Filtering your whole catalogue happens on collection pages. Set <code>limit</code> high enough that the pieces you want to be filterable are actually on the page.</p>
+
+<h3>There is no country or language selector in the footer</h3>
+<p>The selectors only render when there is a choice to make. Add a second country under <strong>Settings → Markets</strong>, or a second language under <strong>Settings → Languages</strong>. A single-market store shows neither, deliberately — a dropdown with one option is noise.</p>
+
+<h3>Saved looks vanished</h3>
+<p>Saving is stored in the browser, on the customer's device, under the key <code>pawform.state.v1</code>. It survives closing the tab and restarting the browser, and it is lost when browsing data is cleared, in private windows, and when the customer switches device or browser. Nothing is stored on your store, so there is nothing for you to recover — and equally, nothing that needs a privacy notice beyond the cookie policy you already have.</p>
+
+<h3>Adding to bag reloads the page instead of opening the drawer</h3>
+<p>Check <code>enable_cart_drawer</code> in <a href="settings.html#cart-and-checkout">Cart and checkout</a>. If it is on, the cause is usually JavaScript being blocked or failing to load; the product form then falls back to a normal post to <code>/cart</code>, which is the intended safety net.</p>
+
+<h3>The announcement bar scrolls too fast, or not at all</h3>
+<p>Speed lives in two places: <code>marquee_speed</code> globally, and <code>speed</code> on the <em>Marquee</em> section for the large one on the home page. The announcement bar follows the global value. Both respect the operating system's reduced-motion setting, in which case the text stops moving.</p>
+
+<h2>Fonts and styling</h2>
+
+<h3>The fonts do not match the screenshots</h3>
+<p>The theme ships with Shopify font pickers enabled (Assistant and Playfair Display). The screenshots use the bundled typefaces. Turn on <code>use_bundled_fonts</code> in <a href="settings.html#typography">Typography</a> to get the look from the preview. See <a href="typography.html">Typography and fonts</a> for the trade-offs.</p>
+
+<h3>All the text got smaller after I changed the type scale</h3>
+<p>The type scale multiplies every size in the theme, so 90% shrinks headings along with body copy. If only body text feels too large, change the body font in the picker rather than the scale — the scale is the blunt instrument for "the whole theme is too small for my audience".</p>
+
+<h3>Text is overflowing a button or a card</h3>
+<p>Almost always caused by long unbroken words — a URL in a heading, a long product name in a narrow column. Add a space or shorten the label. The theme wraps at word boundaries rather than breaking words mid-character, which is the right behaviour for reading and the wrong one for exceptional strings.</p>
+
+<h3>Do I have to keep <code>PF-FONT-LICENSES.txt</code>?</h3>
+<p>Yes. The four bundled typefaces are under the SIL Open Font License, which requires the licence to be distributed with them. Deleting the file is a licence breach even though nothing visibly breaks.</p>
+
+<h2>Customer accounts</h2>
+
+<h3>Logging in sends customers to shopify.com</h3>
+<p>Your store is using Shopify's <em>new</em> customer accounts, where the login and account area are hosted by Shopify. The theme's account templates are not used in that mode, and their styling does not apply. See <a href="accounts.html">Customer accounts</a>.</p>
+
+<h3>The account pages look unstyled</h3>
+<p>They use their own stylesheet, <code>assets/pawform-account.css</code>, which loads only on account templates. If it is missing from your theme's file list, re-upload the theme — a single dropped asset during upload produces exactly this symptom.</p>
+
+<h3>An order page returns "not found"</h3>
+<p>Order pages are per-customer. A link copied from one account will not open in another, and signed-out visitors are redirected to the login page. That is expected.</p>
+
+<h2>Compatibility</h2>
+
+<h3>Does it work with Shopify Markets?</h3>
+<p>Yes. Prices, currency and the country selector all follow Markets. Products need a price adjustment for the market or Shopify falls back to the store's base price.</p>
+
+<h3>Can I translate it?</h3>
+<p>Two locales ship — English and Simplified Chinese — and all interface strings (buttons, form labels, account pages, error messages) live in the locale files rather than in templates. Section copy such as headings and descriptions is per-section text you set in the editor, so it is translated by editing it, not by adding a locale key.</p>
+
+<h3>Does it support metafields?</h3>
+<p>Only through the <em>Custom Liquid</em> block, or through app blocks. The theme does not have metafield-driven sections, so product specifications belong in the product description or the <em>Details</em> block.</p>
+
+<h3>Will my apps' blocks show up?</h3>
+<p>App blocks appear wherever the section schema allows them: the product template, the collection template and the look grids. If an app's block does not appear, the app has not declared one for that template type.</p>

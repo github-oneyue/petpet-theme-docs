@@ -1,0 +1,56 @@
+<p class="eyebrow">Help</p>
+<h1>Support</h1>
+<p class="lede">One person reads every message. Sending the right details in the first message is the difference between a fix today and a week of round trips.</p>
+
+<h2>How to reach us</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Channel</th><th>Use it for</th><th>Reply time</th></tr></thead>
+    <tbody>
+      <tr><td><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></td><td>Anything private: order problems, a store URL you would rather not publish, licence questions.</td><td>Within 2 business days</td></tr>
+      <tr><td><a href="{{REPO}}/issues">GitHub issues</a></td><td>Reproducible bugs in the theme itself. Public, so others can find the answer.</td><td>Within 2 business days</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Support is provided in English and Chinese. Replies come from a person, not a ticket robot, and are sent during GMT+8 business hours.</p>
+
+<h2>What to include</h2>
+<p>A message with these five things can usually be answered in one reply:</p>
+<ol class="steps">
+  <li><b>Theme version</b><span>The number in the theme editor footer, or in <code>config/settings_schema.json</code> as <code>theme_version</code>. Currently <code>1.0.2</code>.</span></li>
+  <li><b>Your store URL</b><span>Even a password-protected one. A <code>.myshopify.com</code> address is enough.</span></li>
+  <li><b>What you expected, and what happened</b><span>"The footer country selector should appear, it does not" is actionable. "The footer is broken" is not.</span></li>
+  <li><b>Steps to reproduce</b><span>Page, what you clicked, in what order. If it only happens on a phone, say which.</span></li>
+  <li><b>A screenshot or a screen recording</b><span>For anything visual. Include the browser's developer console if there is an error — the first line is usually the useful one.</span></li>
+</ol>
+
+<div class="tip">
+<strong>Faster answers</strong>
+<p>The <a href="faq.html">FAQ</a> covers the five most common reports: demo pieces that cannot be bought, missing filters, missing country selectors, disappearing saved looks, and account pages that redirect to shopify.com. All five are settings or Shopify behaviour rather than theme faults.</p>
+</div>
+
+<h2>What is covered</h2>
+<ul>
+  <li><strong>Bugs</strong> in the theme: layout faults, broken interactions, accessibility regressions, anything that differs between two installs of the same version.</li>
+  <li><strong>Setup questions</strong>: which setting does what, how to get a section to look like the demo, why a Shopify feature behaves as it does.</li>
+  <li><strong>Licence questions</strong>: what the bundled fonts allow, whether a use is permitted.</li>
+</ul>
+
+<h3>What is not covered</h3>
+<ul>
+  <li><strong>Custom code.</strong> Editing Liquid, adding scripts or building new sections is outside support scope. We will tell you where the relevant file is; we will not write the change for you.</li>
+  <li><strong>Third-party apps.</strong> Problems that appear only after installing an app belong with that app's developer first.</li>
+  <li><strong>Shopify itself.</strong> Billing, checkout configuration, domain setup and shipping rates are Shopify support's territory. The theme cannot change them.</li>
+  <li><strong>Content work.</strong> Writing copy, editing photographs, choosing a colour palette.</li>
+</ul>
+
+<h2>Version support</h2>
+<p>Fixes are made against the current version and released as an update. Older versions are not patched separately; if a bug affects an older version, updating is the fix. The <a href="changelog.html">changelog</a> lists what changed in each release, so you can judge whether updating is worth the re-check of your customised sections.</p>
+
+<div class="note">
+<strong>Before reporting a visual bug</strong>
+<p>Test once in a private window with extensions disabled. Several browser extensions inject their own CSS and markup into pages, and the resulting breakage looks exactly like a theme fault while appearing in no one else's store.</p>
+</div>
+
+<h2>Security</h2>
+<p>If you believe you have found a security issue in the theme, email rather than opening a public issue, and include enough detail to reproduce it. Please allow reasonable time for a fix before disclosing it publicly.</p>

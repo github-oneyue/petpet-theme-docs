@@ -1,0 +1,64 @@
+<p class="eyebrow">PetPet Theme · v{{VERSION}}</p>
+<h1>A digital wardrobe for pets who dress well.</h1>
+<p class="lede">PetPet Theme is a Shopify Online Store 2.0 theme built around one idea: let a customer browse complete looks instead of a wall of products. This manual covers what the theme does, how to install it, every setting it exposes, and what to check when something looks wrong.</p>
+
+<dl class="meta-list">
+  <dt>Version</dt><dd>1.0.2</dd>
+  <dt>Platform</dt><dd>Shopify, Online Store 2.0 with JSON templates</dd>
+  <dt>Sections</dt><dd>31 in total — 13 of them are home-page sections, numbered 01 to 13</dd>
+  <dt>Templates</dt><dd>12 JSON templates, 7 customer account templates, gift card, password</dd>
+  <dt>Apps</dt><dd>None required. Storefront filters use Shopify's own Search &amp; Discovery app, which is free</dd>
+  <dt>Fonts</dt><dd>Shopify font pickers by default; four typefaces bundled under SIL OFL 1.1</dd>
+</dl>
+
+<h2>Start here</h2>
+<ul class="cards">
+  <li><a href="install.html"><b>Installation</b><span>Upload, publish, then connect menus, pages and collections.</span></a></li>
+  <li><a href="settings.html"><b>Theme settings</b><span>The seven global groups, setting by setting, with defaults.</span></a></li>
+  <li><a href="sections.html"><b>Section reference</b><span>All 31 sections and the fields each one exposes.</span></a></li>
+  <li><a href="products.html"><b>Product &amp; cart</b><span>Block order, variants, structured data, the cart drawer.</span></a></li>
+  <li><a href="accounts.html"><b>Customer accounts</b><span>The seven account templates and how they behave.</span></a></li>
+  <li><a href="typography.html"><b>Typography</b><span>Font pickers, the bundled typefaces, the type scale.</span></a></li>
+  <li><a href="faq.html"><b>FAQ</b><span>Demo content, missing filters, saved items, and other oddities.</span></a></li>
+  <li><a href="support.html"><b>Support</b><span>How to reach us and what to include in a request.</span></a></li>
+</ul>
+
+<h2>What the theme is built around</h2>
+<p>Most fashion themes assume the product is the unit of shopping. Pet clothing works differently: people choose an outfit for an occasion, then discover the individual pieces inside it. The theme leans into that.</p>
+<ul>
+  <li><strong>Look-first browsing.</strong> The runway section steps through complete outfits with the keyboard, the scroll wheel or a drag. Each look carries its own scene — a tea party, a rainy day walk — and its own three pieces.</li>
+  <li><strong>Saving without an account.</strong> Customers can mark looks as saved and come back to them on the same device. Nothing is stored on your server and no login is required.</li>
+  <li><strong>Shopify owns the data.</strong> Prices, variants, stock, images and tax behaviour all come from your products. The theme has no duplicate product settings to keep in sync, so editing a product in admin changes the storefront immediately.</li>
+  <li><strong>Complete before you add content.</strong> Sections that need imagery fall back to bundled photographs, and the two product sections can render demo pieces. A fresh install looks finished, which makes it easier to judge the design before you upload anything.</li>
+</ul>
+
+<h2>What it needs from your store</h2>
+<p>The theme runs on any Shopify plan that supports Online Store 2.0, which is every plan today. Beyond that it expects:</p>
+<ul>
+  <li><strong>Products with images and prices</strong> — the grids and the product page read from them directly.</li>
+  <li><strong>At least one navigation menu</strong> for the header. Menus are created in <em>Online Store → Navigation</em>, not inside the theme.</li>
+  <li><strong>Collections</strong> if you want the look grids driven by merchandising rather than a hand-picked product list.</li>
+  <li><strong>More than one country or language</strong> before the footer selectors appear — a single-country store shows no selector at all, by design.</li>
+</ul>
+
+<div class="note">
+<strong>Not included</strong>
+<p>No apps, no review widgets, no popup builders, no page builder. Every element you see is part of the theme. If you need reviews or upsells, install those apps separately; the theme does not reserve space for them.</p>
+</div>
+
+<h2>Demo content, and replacing it</h2>
+<p>Two home-page sections — <em>Featured looks</em> and <em>Product grid</em> — have a <code>source</code> setting with two useful values: <code>demo</code> and <code>collection</code> (or a hand-picked product list). Out of the box both are set to <code>demo</code>, which renders bundled sample pieces so the layout can be evaluated before your catalogue exists.</p>
+<p>When you are ready to sell, switch <code>source</code> to a collection or a product list. The demo pieces disappear completely — they are not products, they cannot be added to a cart, and they never appear in search or on collection pages.</p>
+
+<div class="warn">
+<strong>Before you publish</strong>
+<p>Leaving a section on <code>demo</code> in a live store means customers see items they cannot buy. Walk the home page once with the theme editor open and confirm every grid is pointing at real products.</p>
+</div>
+
+<h2>Where to go next</h2>
+<ol class="steps">
+  <li><b>Install and publish</b><span>Upload the theme, preview it, then publish. <a href="install.html">Installation →</a></span></li>
+  <li><b>Connect your content</b><span>Menus, collections, the contact page, and the country selector. Also in <a href="install.html">Installation</a>.</span></li>
+  <li><b>Set the brand</b><span>Logo, colours, fonts and the type scale. <a href="settings.html">Theme settings →</a></span></li>
+  <li><b>Fine-tune sections</b><span>Copy, images and the order of the home page. <a href="sections.html">Section reference →</a></span></li>
+</ol>
