@@ -23,7 +23,7 @@
   <a class="topbar__brand" href="index.html"><b>PetPet</b><span>Theme documentation</span></a>
   <div class="topbar__spacer"></div>
   <div class="topbar__links">
-    <span class="pill" title="Documentation build">v1.0.2</span>
+    <span class="pill" title="Documentation build">v1.0.3</span>
     <a class="pill" href="support.html">Support</a>
     <a class="pill pill--ink" href="https://github.com/github-oneyue/petpet-theme-docs">GitHub</a>
     <button id="navToggle" type="button" aria-expanded="false" aria-controls="sidebar">Contents</button>
@@ -71,17 +71,62 @@
   <table>
     <thead><tr><th>Channel</th><th>Use it for</th><th>Reply time</th></tr></thead>
     <tbody>
-      <tr><td><a href="mailto:oneyue24@gmail.com">oneyue24@gmail.com</a></td><td>Anything private: order problems, a store URL you would rather not publish, licence questions.</td><td>Within 2 business days</td></tr>
+      <tr><td><a href="#send-a-request">The support form</a></td><td>Everything else. It asks for the five details that make a fix possible, and takes a link to a screenshot.</td><td>Within 2 business days</td></tr>
+      <tr><td><a href="mailto:oneyue24@gmail.com">oneyue24@gmail.com</a></td><td>Anything private: order problems, a store URL you would rather not publish, license questions.</td><td>Within 2 business days</td></tr>
       <tr><td><a href="https://github.com/github-oneyue/petpet-theme-docs/issues">GitHub issues</a></td><td>Reproducible bugs in the theme itself. Public, so others can find the answer.</td><td>Within 2 business days</td></tr>
     </tbody>
   </table>
 </div>
 <p>Support is provided in English and Chinese. Replies come from a person, not a ticket robot, and are sent during GMT+8 business hours.</p>
 
+<h2 id="send-a-request">Send a request</h2>
+<p>This is the fastest route. It asks for the five details listed further down, so nothing important is left out of the first message. Submissions land in the same inbox as email, so a reply comes from the same place.</p>
+
+<form class="cform" id="support-form" novalidate method="post" target="pf-sink"
+      action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfGO9TKVPoYoNbXOXhneMd_-o9964HQnhvdxbS_ZVGalbjrMA/formResponse">
+  <div class="cform__row">
+    <label class="cform__field">Your name
+      <input name="entry.226503871" autocomplete="name" required>
+    </label>
+    <label class="cform__field">Email address
+      <input type="email" name="entry.261767921" autocomplete="email" required>
+    </label>
+  </div>
+  <div class="cform__row">
+    <label class="cform__field">Store URL
+      <input name="entry.188187959" placeholder="https://your-store.myshopify.com">
+    </label>
+    <label class="cform__field">Theme version
+      <input name="entry.1095888482" placeholder="1.0.3">
+    </label>
+  </div>
+  <label class="cform__field">What happened
+    <textarea name="entry.676151958" rows="6" required placeholder="What you expected, what actually happened, and the steps that reproduce it."></textarea>
+  </label>
+  <label class="cform__field">Screenshot or recording link
+    <input id="pf-shot" placeholder="Optional — a Drive, Dropbox or image URL">
+  </label>
+  <input type="hidden" name="fvv" value="1">
+  <input type="hidden" name="pageHistory" value="0">
+  <div class="cform__actions">
+    <button type="submit" class="cform__submit">Send request</button>
+    <span class="cform__hint">Reply within 2 business days. Nothing is stored on this site.</span>
+  </div>
+  <p class="cform__error" id="pf-form-error" hidden>Sending did not work. Email <a href="mailto:oneyue24@gmail.com">oneyue24@gmail.com</a> instead, or <a href="https://docs.google.com/forms/d/e/1FAIpQLSfGO9TKVPoYoNbXOXhneMd_-o9964HQnhvdxbS_ZVGalbjrMA/viewform" target="_blank" rel="noopener">open the form in a new tab</a>.</p>
+</form>
+<iframe class="cform__sink" id="pf-sink" name="pf-sink" title="Form submission target" tabindex="-1" aria-hidden="true"></iframe>
+
+<div class="cform__done" id="pf-form-done" hidden>
+  <p class="cform__done-title">Request sent.</p>
+  <p>You will get a reply at the address you entered, usually well inside two business days. If you attached a link, double-check that it is shared with anyone who has the link — a private Drive file cannot be opened from here.</p>
+</div>
+
+<p class="embed-note">Need to attach a file rather than link one? Email it to <a href="mailto:oneyue24@gmail.com">oneyue24@gmail.com</a> — attachments work there, and the reply comes from the same inbox as the form.</p>
+
 <h2 id="what-to-include">What to include</h2>
 <p>A message with these five things can usually be answered in one reply:</p>
 <ol class="steps">
-  <li><b>Theme version</b><span>The number in the theme editor footer, or in <code>config/settings_schema.json</code> as <code>theme_version</code>. Currently <code>1.0.2</code>.</span></li>
+  <li><b>Theme version</b><span>The number in the theme editor footer, or in <code>config/settings_schema.json</code> as <code>theme_version</code>. Currently <code>1.0.3</code>.</span></li>
   <li><b>Your store URL</b><span>Even a password-protected one. A <code>.myshopify.com</code> address is enough.</span></li>
   <li><b>What you expected, and what happened</b><span>"The footer country selector should appear, it does not" is actionable. "The footer is broken" is not.</span></li>
   <li><b>Steps to reproduce</b><span>Page, what you clicked, in what order. If it only happens on a phone, say which.</span></li>
@@ -90,14 +135,14 @@
 
 <div class="tip">
 <strong>Faster answers</strong>
-<p>The <a href="faq.html">FAQ</a> covers the five most common reports: demo pieces that cannot be bought, missing filters, missing country selectors, disappearing saved looks, and account pages that redirect to shopify.com. All five are settings or Shopify behaviour rather than theme faults.</p>
+<p>The <a href="faq.html">FAQ</a> covers the five most common reports: demo pieces that cannot be bought, missing filters, missing country selectors, disappearing saved looks, and account pages that redirect to shopify.com. All five are settings or Shopify behavior rather than theme faults.</p>
 </div>
 
 <h2 id="what-is-covered">What is covered</h2>
 <ul>
   <li><strong>Bugs</strong> in the theme: layout faults, broken interactions, accessibility regressions, anything that differs between two installs of the same version.</li>
   <li><strong>Setup questions</strong>: which setting does what, how to get a section to look like the demo, why a Shopify feature behaves as it does.</li>
-  <li><strong>Licence questions</strong>: what the bundled fonts allow, whether a use is permitted.</li>
+  <li><strong>License questions</strong>: what the bundled fonts allow, whether a use is permitted.</li>
 </ul>
 
 <h3 id="what-is-not-covered">What is not covered</h3>
@@ -105,11 +150,11 @@
   <li><strong>Custom code.</strong> Editing Liquid, adding scripts or building new sections is outside support scope. We will tell you where the relevant file is; we will not write the change for you.</li>
   <li><strong>Third-party apps.</strong> Problems that appear only after installing an app belong with that app's developer first.</li>
   <li><strong>Shopify itself.</strong> Billing, checkout configuration, domain setup and shipping rates are Shopify support's territory. The theme cannot change them.</li>
-  <li><strong>Content work.</strong> Writing copy, editing photographs, choosing a colour palette.</li>
+  <li><strong>Content work.</strong> Writing copy, editing photographs, choosing a color palette.</li>
 </ul>
 
 <h2 id="version-support">Version support</h2>
-<p>Fixes are made against the current version and released as an update. Older versions are not patched separately; if a bug affects an older version, updating is the fix. The <a href="changelog.html">changelog</a> lists what changed in each release, so you can judge whether updating is worth the re-check of your customised sections.</p>
+<p>Fixes are made against the current version and released as an update. Older versions are not patched separately; if a bug affects an older version, updating is the fix. The <a href="changelog.html">changelog</a> lists what changed in each release, so you can judge whether updating is worth the re-check of your customized sections.</p>
 
 <div class="note">
 <strong>Before reporting a visual bug</strong>
@@ -118,6 +163,62 @@
 
 <h2 id="security">Security</h2>
 <p>If you believe you have found a security issue in the theme, email rather than opening a public issue, and include enough detail to reproduce it. Please allow reasonable time for a fix before disclosing it publicly.</p>
+
+<script>
+(function () {
+  var form = document.getElementById('support-form');
+  if (!form) return;
+  var done = document.getElementById('pf-form-done');
+  var err = document.getElementById('pf-form-error');
+  var shot = document.getElementById('pf-shot');
+  var sink = document.getElementById('pf-sink');
+  var btn = form.querySelector('.cform__submit');
+  var label = btn.textContent;
+  var posting = false;
+  var timer;
+
+  function settle(ok) {
+    window.clearTimeout(timer);
+    btn.disabled = false;
+    btn.textContent = label;
+    if (ok) {
+      form.hidden = true;
+      if (sink) { sink.hidden = true; }
+      done.hidden = false;
+      done.scrollIntoView({ block: 'center' });
+    } else {
+      posting = false;
+      err.hidden = false;
+    }
+  }
+
+  if (sink) {
+    // The form posts natively into a hidden frame, so Google's reply is
+    // unreachable from this page. A completed navigation is the only signal.
+    sink.addEventListener('load', function () {
+      if (posting) { settle(true); }
+    });
+  }
+
+  form.addEventListener('submit', function (event) {
+    if (!form.checkValidity()) {
+      event.preventDefault();
+      form.reportValidity();
+      return;
+    }
+    var link = ((shot && shot.value) || '').trim();
+    if (link) {
+      var message = form.querySelector('[name="entry.676151958"]');
+      message.value = message.value.replace(/\s+$/, '') + '\n\nScreenshot: ' + link;
+    }
+    posting = true;
+    btn.disabled = true;
+    btn.textContent = 'Sending';
+    err.hidden = true;
+    timer = window.setTimeout(function () { if (posting) { settle(false); } }, 15000);
+  });
+})();
+</script>
     <div class="pager"><a class="pager__prev" href="faq.html"><span>Previous</span>FAQ & troubleshooting</a><a class="pager__next" href="changelog.html"><span>Next</span>Changelog</a></div>
   </main>
 
@@ -125,6 +226,8 @@
     <p class="toc__label">On this page</p>
     <ul>
       <li><a href="#how-to-reach-us">How to reach us</a>
+      </li>
+      <li><a href="#send-a-request">Send a request</a>
       </li>
       <li><a href="#what-to-include">What to include</a>
       </li>
@@ -144,8 +247,8 @@
 <footer class="site-footer">
   <div class="site-footer__inner">
     <span class="site-footer__script">Dressed with love.</span>
-    <span>PetPet Theme v1.0.2 — documentation for Shopify Online Store 2.0.</span>
-    <span>Fonts bundled under SIL OFL 1.1 · <a href="assets/PF-FONT-LICENSES.txt">licences</a></span>
+    <span>PetPet Theme v1.0.3 — documentation for Shopify Online Store 2.0.</span>
+    <span>Fonts bundled under SIL OFL 1.1 · <a href="assets/PF-FONT-LICENSES.txt">licenses</a></span>
     <span style="margin-left:auto"><a href="support.html">Support</a> · <a href="changelog.html">Changelog</a> · <a href="https://github.com/github-oneyue/petpet-theme-docs">Repository</a></span>
   </div>
 </footer>

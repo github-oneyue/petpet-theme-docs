@@ -23,7 +23,7 @@
   <a class="topbar__brand" href="index.html"><b>PetPet</b><span>Theme documentation</span></a>
   <div class="topbar__spacer"></div>
   <div class="topbar__links">
-    <span class="pill" title="Documentation build">v1.0.2</span>
+    <span class="pill" title="Documentation build">v1.0.3</span>
     <a class="pill" href="support.html">Support</a>
     <a class="pill pill--ink" href="https://github.com/github-oneyue/petpet-theme-docs">GitHub</a>
     <button id="navToggle" type="button" aria-expanded="false" aria-controls="sidebar">Contents</button>
@@ -64,7 +64,19 @@
   <main class="content" id="main">
 <p class="eyebrow">Help</p>
 <h1>Changelog</h1>
-<p class="lede">What changed in each release, and what to re-check after updating. Updates replace the theme wholesale, so any section you customised in the old copy stays in the old copy — see the note at the end.</p>
+<p class="lede">What changed in each release, and what to re-check after updating. Updates replace the theme wholesale, so any section you customized in the old copy stays in the old copy — see the note at the end.</p>
+
+<h2 id="1-0-3-15-november-2026">1.0.3 — 15 November 2026</h2>
+<p>Copy and documentation release. No markup or layout changes, so updating is safe on a customized store.</p>
+<h3 id="changed">Changed</h3>
+<ul>
+  <li>Setting labels and storefront strings now use American spelling: <em>Colors</em>, <em>Accent color</em>, <em>Center menu</em>, <em>canceled</em>. Section IDs are unchanged, so saved settings carry over.</li>
+</ul>
+<h3 id="docs">Docs</h3>
+<ul>
+  <li>Every section in the theme is now documented, including the page template and the announcement marquee.</li>
+  <li>Support requests can be sent from a form instead of only by email.</li>
+</ul>
 
 <h2 id="1-0-2-15-november-2026">1.0.2 — 15 November 2026</h2>
 <p>The account release. Adds the missing customer-account templates, a consistent type scale, and fixes to landmark structure.</p>
@@ -74,7 +86,7 @@
   <li>Country and language selectors in the footer, submitted together in one form.</li>
   <li>A ten-step type scale, so the <em>font size</em> setting now rescales the whole theme rather than only body copy.</li>
 </ul>
-<h3 id="changed">Changed</h3>
+<h3 id="changed-2">Changed</h3>
 <ul>
   <li>Readable text no longer sits below 12px. Decorative micro-type — ticker, eyebrows, card indices — keeps its original size on purpose.</li>
   <li>Text fields are clamped to a 16px minimum so iOS does not zoom the viewport on focus.</li>
@@ -92,7 +104,7 @@
   <li>Each font file was requested twice: the preload used a versioned URL while the stylesheet used an unversioned one, so the cache never matched. The preload now uses the same URL the stylesheet does.</li>
   <li>Bundled fonts no longer load on pages that use the Shopify font pickers.</li>
 </ul>
-<h3 id="changed-2">Changed</h3>
+<h3 id="changed-3">Changed</h3>
 <ul>
   <li>Font loading moved to Shopify's <code>font_picker</code> by default, cutting the initial font payload from 24 files to 2.</li>
 </ul>
@@ -102,12 +114,12 @@
 <ul>
   <li>31 sections including the runway look browser, the thirteen numbered home-page sections, and the template sections for product, collection, cart, blog, search and the utility pages.</li>
   <li>Cart drawer, saved looks stored on the device, structured product data.</li>
-  <li>Four bundled typefaces under SIL OFL 1.1 with full licence texts.</li>
+  <li>Four bundled typefaces under SIL OFL 1.1 with full license texts.</li>
   <li>English and Simplified Chinese locales.</li>
 </ul>
 
 <h2 id="updating-without-losing-your-setup">Updating without losing your setup</h2>
-<p>Shopify's <em>Update</em> action replaces the theme's files with the new version but keeps your <code>settings_data.json</code> and your templates, so colours, fonts and section order survive. What does not survive is any edit you made to a theme file directly, and any section whose schema changed enough that the new default no longer matches your saved values.</p>
+<p>Shopify's <em>Update</em> action replaces the theme's files with the new version but keeps your <code>settings_data.json</code> and your templates, so colors, fonts and section order survive. What does not survive is any edit you made to a theme file directly, and any section whose schema changed enough that the new default no longer matches your saved values.</p>
 <div class="warn">
 <strong>Duplicate before updating</strong>
 <p>Take a copy of the current theme first — <em>Themes → … → Duplicate</em>. It costs nothing and it is the only way back if an update surprises you. After updating, walk the home page, a product, a collection and the cart.</p>
@@ -118,17 +130,23 @@
   <aside class="toc" aria-label="On this page">
     <p class="toc__label">On this page</p>
     <ul>
+      <li><a href="#1-0-3-15-november-2026">1.0.3 — 15 November 2026</a>
+        <ul>
+          <li><a href="#changed">Changed</a></li>
+          <li><a href="#docs">Docs</a></li>
+        </ul>
+      </li>
       <li><a href="#1-0-2-15-november-2026">1.0.2 — 15 November 2026</a>
         <ul>
           <li><a href="#added">Added</a></li>
-          <li><a href="#changed">Changed</a></li>
+          <li><a href="#changed-2">Changed</a></li>
           <li><a href="#fixed">Fixed</a></li>
         </ul>
       </li>
       <li><a href="#1-0-1-14-november-2026">1.0.1 — 14 November 2026</a>
         <ul>
           <li><a href="#fixed-2">Fixed</a></li>
-          <li><a href="#changed-2">Changed</a></li>
+          <li><a href="#changed-3">Changed</a></li>
         </ul>
       </li>
       <li><a href="#1-0-0-12-november-2026">1.0.0 — 12 November 2026</a>
@@ -142,8 +160,8 @@
 <footer class="site-footer">
   <div class="site-footer__inner">
     <span class="site-footer__script">Dressed with love.</span>
-    <span>PetPet Theme v1.0.2 — documentation for Shopify Online Store 2.0.</span>
-    <span>Fonts bundled under SIL OFL 1.1 · <a href="assets/PF-FONT-LICENSES.txt">licences</a></span>
+    <span>PetPet Theme v1.0.3 — documentation for Shopify Online Store 2.0.</span>
+    <span>Fonts bundled under SIL OFL 1.1 · <a href="assets/PF-FONT-LICENSES.txt">licenses</a></span>
     <span style="margin-left:auto"><a href="support.html">Support</a> · <a href="changelog.html">Changelog</a> · <a href="https://github.com/github-oneyue/petpet-theme-docs">Repository</a></span>
   </div>
 </footer>
