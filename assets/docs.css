@@ -532,6 +532,120 @@ tbody td code { background: none; padding: 0; font-size: 1em; }
   .site-footer { padding: 22px 20px 34px; }
 }
 
+/* Contact form. The page is static, so the form posts straight to the Google
+   Form that owns the inbox; there is no server here and nothing is stored
+   locally. Labels sit above the fields because the columns are narrow. */
+.cform {
+  margin: 20px 0 8px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--paper);
+}
+/* Native POST goes into this frame so the browser never leaves the page. */
+.cform__sink {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.cform__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.cform__field {
+  display: block;
+  margin-bottom: 14px;
+  font-family: var(--mono);
+  font-size: var(--fs-label);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.cform__field input,
+.cform__field textarea {
+  display: block;
+  width: 100%;
+  margin-top: 7px;
+  padding: 11px 13px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #fff;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  letter-spacing: normal;
+  text-transform: none;
+  line-height: 1.5;
+}
+.cform__field textarea { resize: vertical; min-height: 120px; }
+.cform__field input:focus,
+.cform__field textarea:focus {
+  outline: 2px solid var(--pink);
+  outline-offset: 1px;
+  border-color: transparent;
+}
+.cform__field input::placeholder,
+.cform__field textarea::placeholder { color: #b9b4ac; }
+.cform__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-top: 4px;
+}
+.cform__submit {
+  padding: 12px 26px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: var(--fs-ui);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.cform__submit:hover { background: #000; }
+.cform__submit:disabled { opacity: .55; cursor: default; }
+.cform__hint { font-size: var(--fs-xs); color: var(--muted); }
+.cform__error {
+  margin: 14px 0 0;
+  padding: 12px 14px;
+  border-left: 3px solid var(--pink);
+  background: var(--pink-soft);
+  font-size: var(--fs-sm);
+}
+.cform__done {
+  margin: 20px 0 8px;
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--green);
+  border-radius: 12px;
+  background: var(--paper-3);
+}
+.cform__done-title {
+  margin: 0 0 6px;
+  font-family: var(--mono);
+  font-size: var(--fs-label);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+.cform__done p:last-child { margin-bottom: 0; }
+
+@media (max-width: 620px) {
+  .cform { padding: 16px; }
+  .cform__row { grid-template-columns: 1fr; gap: 0; }
+}
+
+@media print {
+  .cform { display: none; }
+}
+
 /* Narrow phones: the top bar cannot hold the version, a repo link and the
    contents button alongside the brand, so drop the two that are decorative. */
 @media (max-width: 560px) {
