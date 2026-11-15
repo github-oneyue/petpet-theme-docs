@@ -1,0 +1,7 @@
+# Local OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Nothing else: the built .html files are committed on purpose, because
+# GitHub Pages serves this branch directly with no build job.

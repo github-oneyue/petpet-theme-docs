@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQ and troubleshooting — PetPet Theme</title>
+<meta name="description" content="Common questions about demo content, filters, images and storefront behaviour.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="FAQ and troubleshooting — PetPet Theme">
+<meta property="og:description" content="Common questions about demo content, filters, images and storefront behaviour.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://github-oneyue.github.io/petpet-theme-docs/faq.html">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/pf-dmsans-001.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/pf-iserif-003.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/docs.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <a class="topbar__brand" href="index.html"><b>PetPet</b><span>Theme documentation</span></a>
+  <div class="topbar__spacer"></div>
+  <div class="topbar__links">
+    <span class="pill" title="Documentation build">v1.0.2</span>
+    <a class="pill" href="support.html">Support</a>
+    <a class="pill pill--ink" href="https://github.com/github-oneyue/petpet-theme-docs">GitHub</a>
+    <button id="navToggle" type="button" aria-expanded="false" aria-controls="sidebar">Contents</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+    <div class="sidebar__inner">
+    <div class="sidebar__group">
+      <p class="sidebar__label">Start here</p>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="install.html">Installation</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <p class="sidebar__label">Reference</p>
+      <ul>
+        <li><a href="settings.html">Theme settings</a></li>
+        <li><a href="sections.html">Sections</a></li>
+        <li><a href="products.html">Product & cart</a></li>
+        <li><a href="accounts.html">Customer accounts</a></li>
+        <li><a href="typography.html">Typography & fonts</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <p class="sidebar__label">Help</p>
+      <ul>
+        <li><a href="faq.html" aria-current="page">FAQ & troubleshooting</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+
+  <main class="content" id="main">
+<p class="eyebrow">Help</p>
+<h1>FAQ and troubleshooting</h1>
+<p class="lede">The questions that come up most often, answered with what is actually happening rather than "clear your cache". If yours is not here, <a href="support.html">write to us</a>.</p>
+
+<h2 id="content-and-demo-data">Content and demo data</h2>
+
+<h3 id="my-grids-show-clothes-i-never-added">My grids show clothes I never added</h3>
+<p><em>Featured looks</em> and <em>Product grid</em> both have a <code>source</code> setting. It ships as <code>demo</code>, which renders bundled sample pieces. Open the section in the editor and switch the source to a collection or a hand-picked product list. The demo pieces then disappear entirely — they are not products and cannot be purchased.</p>
+
+<h3 id="can-i-delete-the-bundled-photographs">Can I delete the bundled photographs?</h3>
+<p>You can, but sections that fall back to them will then render an empty frame. The cleaner route is to upload your own images in each section's image picker; a picked image always wins over the bundled one. Every bundled asset is a normal file in <code>assets/</code> if you do want to remove them.</p>
+
+<h3 id="a-section-i-added-is-not-in-the-add-section-list-on-some-pages">A section I added is not in the "Add section" list on some pages</h3>
+<p>Home-page sections only appear when the home page is being edited, and product or collection sections only appear on those templates. This is how Shopify scopes sections; it is not a missing section.</p>
+
+<h2 id="storefront-behaviour">Storefront behaviour</h2>
+
+<h3 id="the-collection-filters-are-missing">The collection filters are missing</h3>
+<p><code>show_filters</code> on the collection template uses Shopify's own storefront filtering, which needs the free <strong>Search &amp; Discovery</strong> app installed and at least one filter configured for that collection. Without it the filter rail has nothing to render and stays hidden.</p>
+
+<h3 id="the-quick-filters-on-the-product-grid-do-not-find-everything">The quick filters on the product grid do not find everything</h3>
+<p>Those filter the cards already rendered on the page — they are a convenience, not a search. Filtering your whole catalogue happens on collection pages. Set <code>limit</code> high enough that the pieces you want to be filterable are actually on the page.</p>
+
+<h3 id="there-is-no-country-or-language-selector-in-the-footer">There is no country or language selector in the footer</h3>
+<p>The selectors only render when there is a choice to make. Add a second country under <strong>Settings → Markets</strong>, or a second language under <strong>Settings → Languages</strong>. A single-market store shows neither, deliberately — a dropdown with one option is noise.</p>
+
+<h3 id="saved-looks-vanished">Saved looks vanished</h3>
+<p>Saving is stored in the browser, on the customer's device, under the key <code>pawform.state.v1</code>. It survives closing the tab and restarting the browser, and it is lost when browsing data is cleared, in private windows, and when the customer switches device or browser. Nothing is stored on your store, so there is nothing for you to recover — and equally, nothing that needs a privacy notice beyond the cookie policy you already have.</p>
+
+<h3 id="adding-to-bag-reloads-the-page-instead-of-opening-the-drawer">Adding to bag reloads the page instead of opening the drawer</h3>
+<p>Check <code>enable_cart_drawer</code> in <a href="settings.html#cart-and-checkout">Cart and checkout</a>. If it is on, the cause is usually JavaScript being blocked or failing to load; the product form then falls back to a normal post to <code>/cart</code>, which is the intended safety net.</p>
+
+<h3 id="the-announcement-bar-scrolls-too-fast-or-not-at-all">The announcement bar scrolls too fast, or not at all</h3>
+<p>Speed lives in two places: <code>marquee_speed</code> globally, and <code>speed</code> on the <em>Marquee</em> section for the large one on the home page. The announcement bar follows the global value. Both respect the operating system's reduced-motion setting, in which case the text stops moving.</p>
+
+<h2 id="fonts-and-styling">Fonts and styling</h2>
+
+<h3 id="the-fonts-do-not-match-the-screenshots">The fonts do not match the screenshots</h3>
+<p>The theme ships with Shopify font pickers enabled (Assistant and Playfair Display). The screenshots use the bundled typefaces. Turn on <code>use_bundled_fonts</code> in <a href="settings.html#typography">Typography</a> to get the look from the preview. See <a href="typography.html">Typography and fonts</a> for the trade-offs.</p>
+
+<h3 id="all-the-text-got-smaller-after-i-changed-the-type-scale">All the text got smaller after I changed the type scale</h3>
+<p>The type scale multiplies every size in the theme, so 90% shrinks headings along with body copy. If only body text feels too large, change the body font in the picker rather than the scale — the scale is the blunt instrument for "the whole theme is too small for my audience".</p>
+
+<h3 id="text-is-overflowing-a-button-or-a-card">Text is overflowing a button or a card</h3>
+<p>Almost always caused by long unbroken words — a URL in a heading, a long product name in a narrow column. Add a space or shorten the label. The theme wraps at word boundaries rather than breaking words mid-character, which is the right behaviour for reading and the wrong one for exceptional strings.</p>
+
+<h3 id="do-i-have-to-keep-pf-font-licenses-txt">Do I have to keep <code>PF-FONT-LICENSES.txt</code>?</h3>
+<p>Yes. The four bundled typefaces are under the SIL Open Font License, which requires the licence to be distributed with them. Deleting the file is a licence breach even though nothing visibly breaks.</p>
+
+<h2 id="customer-accounts">Customer accounts</h2>
+
+<h3 id="logging-in-sends-customers-to-shopify-com">Logging in sends customers to shopify.com</h3>
+<p>Your store is using Shopify's <em>new</em> customer accounts, where the login and account area are hosted by Shopify. The theme's account templates are not used in that mode, and their styling does not apply. See <a href="accounts.html">Customer accounts</a>.</p>
+
+<h3 id="the-account-pages-look-unstyled">The account pages look unstyled</h3>
+<p>They use their own stylesheet, <code>assets/pawform-account.css</code>, which loads only on account templates. If it is missing from your theme's file list, re-upload the theme — a single dropped asset during upload produces exactly this symptom.</p>
+
+<h3 id="an-order-page-returns-not-found">An order page returns "not found"</h3>
+<p>Order pages are per-customer. A link copied from one account will not open in another, and signed-out visitors are redirected to the login page. That is expected.</p>
+
+<h2 id="compatibility">Compatibility</h2>
+
+<h3 id="does-it-work-with-shopify-markets">Does it work with Shopify Markets?</h3>
+<p>Yes. Prices, currency and the country selector all follow Markets. Products need a price adjustment for the market or Shopify falls back to the store's base price.</p>
+
+<h3 id="can-i-translate-it">Can I translate it?</h3>
+<p>Two locales ship — English and Simplified Chinese — and all interface strings (buttons, form labels, account pages, error messages) live in the locale files rather than in templates. Section copy such as headings and descriptions is per-section text you set in the editor, so it is translated by editing it, not by adding a locale key.</p>
+
+<h3 id="does-it-support-metafields">Does it support metafields?</h3>
+<p>Only through the <em>Custom Liquid</em> block, or through app blocks. The theme does not have metafield-driven sections, so product specifications belong in the product description or the <em>Details</em> block.</p>
+
+<h3 id="will-my-apps-blocks-show-up">Will my apps' blocks show up?</h3>
+<p>App blocks appear wherever the section schema allows them: the product template, the collection template and the look grids. If an app's block does not appear, the app has not declared one for that template type.</p>
+    <div class="pager"><a class="pager__prev" href="typography.html"><span>Previous</span>Typography & fonts</a><a class="pager__next" href="support.html"><span>Next</span>Support</a></div>
+  </main>
+
+  <aside class="toc" aria-label="On this page">
+    <p class="toc__label">On this page</p>
+    <ul>
+      <li><a href="#content-and-demo-data">Content and demo data</a>
+        <ul>
+          <li><a href="#my-grids-show-clothes-i-never-added">My grids show clothes I never added</a></li>
+          <li><a href="#can-i-delete-the-bundled-photographs">Can I delete the bundled photographs?</a></li>
+          <li><a href="#a-section-i-added-is-not-in-the-add-section-list-on-some-pages">A section I added is not in the &quot;Add section&quot; list on some pages</a></li>
+        </ul>
+      </li>
+      <li><a href="#storefront-behaviour">Storefront behaviour</a>
+        <ul>
+          <li><a href="#the-collection-filters-are-missing">The collection filters are missing</a></li>
+          <li><a href="#the-quick-filters-on-the-product-grid-do-not-find-everything">The quick filters on the product grid do not find everything</a></li>
+          <li><a href="#there-is-no-country-or-language-selector-in-the-footer">There is no country or language selector in the footer</a></li>
+          <li><a href="#saved-looks-vanished">Saved looks vanished</a></li>
+          <li><a href="#adding-to-bag-reloads-the-page-instead-of-opening-the-drawer">Adding to bag reloads the page instead of opening the drawer</a></li>
+          <li><a href="#the-announcement-bar-scrolls-too-fast-or-not-at-all">The announcement bar scrolls too fast, or not at all</a></li>
+        </ul>
+      </li>
+      <li><a href="#fonts-and-styling">Fonts and styling</a>
+        <ul>
+          <li><a href="#the-fonts-do-not-match-the-screenshots">The fonts do not match the screenshots</a></li>
+          <li><a href="#all-the-text-got-smaller-after-i-changed-the-type-scale">All the text got smaller after I changed the type scale</a></li>
+          <li><a href="#text-is-overflowing-a-button-or-a-card">Text is overflowing a button or a card</a></li>
+          <li><a href="#do-i-have-to-keep-pf-font-licenses-txt">Do I have to keep PF-FONT-LICENSES.txt?</a></li>
+        </ul>
+      </li>
+      <li><a href="#customer-accounts">Customer accounts</a>
+        <ul>
+          <li><a href="#logging-in-sends-customers-to-shopify-com">Logging in sends customers to shopify.com</a></li>
+          <li><a href="#the-account-pages-look-unstyled">The account pages look unstyled</a></li>
+          <li><a href="#an-order-page-returns-not-found">An order page returns &quot;not found&quot;</a></li>
+        </ul>
+      </li>
+      <li><a href="#compatibility">Compatibility</a>
+        <ul>
+          <li><a href="#does-it-work-with-shopify-markets">Does it work with Shopify Markets?</a></li>
+          <li><a href="#can-i-translate-it">Can I translate it?</a></li>
+          <li><a href="#does-it-support-metafields">Does it support metafields?</a></li>
+          <li><a href="#will-my-apps-blocks-show-up">Will my apps&#x27; blocks show up?</a></li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <span class="site-footer__script">Dressed with love.</span>
+    <span>PetPet Theme v1.0.2 — documentation for Shopify Online Store 2.0.</span>
+    <span>Fonts bundled under SIL OFL 1.1 · <a href="assets/PF-FONT-LICENSES.txt">licences</a></span>
+    <span style="margin-left:auto"><a href="support.html">Support</a> · <a href="changelog.html">Changelog</a> · <a href="https://github.com/github-oneyue/petpet-theme-docs">Repository</a></span>
+  </div>
+</footer>
+
+<script src="assets/docs.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Customer accounts — PetPet Theme</title>
+<meta name="description" content="The seven account templates, address forms and the difference between account types.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Customer accounts — PetPet Theme">
+<meta property="og:description" content="The seven account templates, address forms and the difference between account types.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://github-oneyue.github.io/petpet-theme-docs/accounts.html">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/pf-dmsans-001.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/pf-iserif-003.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/docs.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <a class="topbar__brand" href="index.html"><b>PetPet</b><span>Theme documentation</span></a>
+  <div class="topbar__spacer"></div>
+  <div class="topbar__links">
+    <span class="pill" title="Documentation build">v1.0.2</span>
+    <a class="pill" href="support.html">Support</a>
+    <a class="pill pill--ink" href="https://github.com/github-oneyue/petpet-theme-docs">GitHub</a>
+    <button id="navToggle" type="button" aria-expanded="false" aria-controls="sidebar">Contents</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+    <div class="sidebar__inner">
+    <div class="sidebar__group">
+      <p class="sidebar__label">Start here</p>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="install.html">Installation</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <p class="sidebar__label">Reference</p>
+      <ul>
+        <li><a href="settings.html">Theme settings</a></li>
+        <li><a href="sections.html">Sections</a></li>
+        <li><a href="products.html">Product & cart</a></li>
+        <li><a href="accounts.html" aria-current="page">Customer accounts</a></li>
+        <li><a href="typography.html">Typography & fonts</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <p class="sidebar__label">Help</p>
+      <ul>
+        <li><a href="faq.html">FAQ & troubleshooting</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+
+  <main class="content" id="main">
+<p class="eyebrow">Reference</p>
+<h1>Customer accounts</h1>
+<p class="lede">Seven templates cover login, registration, the account dashboard, order history, addresses, password reset and account activation. They are the only templates in the theme written in Liquid rather than JSON, because Shopify requires it.</p>
+
+<div class="warn">
+<strong>Read this first: two kinds of customer accounts</strong>
+<p>Shopify now offers <em>new</em> customer accounts, where login and the account area are hosted by Shopify on its own domain. When a store uses them, customers never see the templates on this page — Shopify serves its own screens, and the theme's account styling does not apply. These templates are used by stores on <em>classic</em> customer accounts.</p>
+<p>Check which one your store uses under <strong>Settings → Customer accounts</strong>. If the only option offered is new accounts, nothing below will be visible on your storefront, and that is expected behaviour rather than a broken theme.</p>
+</div>
+
+<h2 id="the-templates">The templates</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Template</th><th>URL</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td><code>customers/login.liquid</code></td><td><code>/account/login</code></td><td>Email and password. A "forgot password" link switches the same page into recovery mode instead of loading a second template.</td></tr>
+      <tr><td><code>customers/register.liquid</code></td><td><code>/account/register</code></td><td>Name, email, password. Sends the account activation email, or signs the customer in directly when the store does not require activation.</td></tr>
+      <tr><td><code>customers/account.liquid</code></td><td><code>/account</code></td><td>Dashboard: order history in pages of 20, default address, and links to the other account pages.</td></tr>
+      <tr><td><code>customers/order.liquid</code></td><td><code>/account/orders/…</code></td><td>Single order: line items, totals, shipping and billing addresses, and fulfilment status. Only reachable by the customer who placed it.</td></tr>
+      <tr><td><code>customers/addresses.liquid</code></td><td><code>/account/addresses</code></td><td>Saved addresses in pages of 6, with add, edit, delete and set-as-default.</td></tr>
+      <tr><td><code>customers/activate_account.liquid</code></td><td><code>/account/activate/…</code></td><td>The page a customer lands on from the activation email: choose a password, then continue to the account.</td></tr>
+      <tr><td><code>customers/reset_password.liquid</code></td><td><code>/account/reset/…</code></td><td>Set a new password from the recovery email.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 id="address-forms">Address forms</h2>
+<p>Each address form carries Shopify's full country list, and the province field swaps to a free-text input for countries that have no provinces defined. Selecting a country that does have them fills the province dropdown without a page reload.</p>
+<ul>
+  <li>Existing addresses preselect both country and province when you open them for editing.</li>
+  <li>The <em>set as default</em> checkbox is honoured by the account dashboard, which shows the default address first.</li>
+  <li>Deleting the default address leaves the account with no default rather than promoting another one — Shopify's behaviour, not a theme choice.</li>
+</ul>
+
+<h2 id="styling-and-assets">Styling and assets</h2>
+<p>Account pages load their own stylesheet, <code>assets/pawform-account.css</code>, and a small script for the province fields. Neither is loaded on any other template, so the shop's CSS budget is unaffected when a customer is browsing products.</p>
+
+<div class="note">
+<strong>Account menu</strong>
+<p>The header accepts an optional menu for signed-in customers (<code>customer_account_menu</code> on the header section). Leave it empty and the account link simply goes to <code>/account</code>.</p>
+</div>
+
+<h2 id="testing-account-pages">Testing account pages</h2>
+<ol class="steps">
+  <li><b>Create a test customer</b><span>Customers → Add customer in admin. Use an address you can receive mail at, since activation and reset both send email.</span></li>
+  <li><b>Walk the flow</b><span>Log in, open the account page, open an order, add an address, edit it, delete it, then log out.</span></li>
+  <li><b>Reset the password</b><span>Use the forgot-password link, follow the email, and confirm the new password works.</span></li>
+  <li><b>Check on a phone</b><span>The address form is the widest element in the theme after the product page; it is where narrow screens wrap awkwardly first.</span></li>
+</ol>
+    <div class="pager"><a class="pager__prev" href="products.html"><span>Previous</span>Product & cart</a><a class="pager__next" href="typography.html"><span>Next</span>Typography & fonts</a></div>
+  </main>
+
+  <aside class="toc" aria-label="On this page">
+    <p class="toc__label">On this page</p>
+    <ul>
+      <li><a href="#the-templates">The templates</a>
+      </li>
+      <li><a href="#address-forms">Address forms</a>
+      </li>
+      <li><a href="#styling-and-assets">Styling and assets</a>
+      </li>
+      <li><a href="#testing-account-pages">Testing account pages</a>
+      </li>
+    </ul>
+  </aside>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <span class="site-footer__script">Dressed with love.</span>
+    <span>PetPet Theme v1.0.2 — documentation for Shopify Online Store 2.0.</span>
+    <span>Fonts bundled under SIL OFL 1.1 · <a href="assets/PF-FONT-LICENSES.txt">licences</a></span>
+    <span style="margin-left:auto"><a href="support.html">Support</a> · <a href="changelog.html">Changelog</a> · <a href="https://github.com/github-oneyue/petpet-theme-docs">Repository</a></span>
+  </div>
+</footer>
+
+<script src="assets/docs.js"></script>
+</body>
+</html>

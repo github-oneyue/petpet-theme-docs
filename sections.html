@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Section reference — PetPet Theme</title>
+<meta name="description" content="All 31 sections with the settings each one exposes.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Section reference — PetPet Theme">
+<meta property="og:description" content="All 31 sections with the settings each one exposes.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://github-oneyue.github.io/petpet-theme-docs/sections.html">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/pf-dmsans-001.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/pf-iserif-003.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/docs.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <a class="topbar__brand" href="index.html"><b>PetPet</b><span>Theme documentation</span></a>
+  <div class="topbar__spacer"></div>
+  <div class="topbar__links">
+    <span class="pill" title="Documentation build">v1.0.2</span>
+    <a class="pill" href="support.html">Support</a>
+    <a class="pill pill--ink" href="https://github.com/github-oneyue/petpet-theme-docs">GitHub</a>
+    <button id="navToggle" type="button" aria-expanded="false" aria-controls="sidebar">Contents</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+    <div class="sidebar__inner">
+    <div class="sidebar__group">
+      <p class="sidebar__label">Start here</p>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="install.html">Installation</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <p class="sidebar__label">Reference</p>
+      <ul>
+        <li><a href="settings.html">Theme settings</a></li>
+        <li><a href="sections.html" aria-current="page">Sections</a></li>
+        <li><a href="products.html">Product & cart</a></li>
+        <li><a href="accounts.html">Customer accounts</a></li>
+        <li><a href="typography.html">Typography & fonts</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <p class="sidebar__label">Help</p>
+      <ul>
+        <li><a href="faq.html">FAQ & troubleshooting</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+
+  <main class="content" id="main">
+<p class="eyebrow">Reference</p>
+<h1>Section reference</h1>
+<p class="lede">PetPet Theme ships 31 sections. Each card below lists the settings that section exposes in the editor, with the value it starts with. Anything marked <em>Liquid</em> accepts Liquid code; everything else is a plain form field.</p>
+
+<div class="note">
+<strong>Adding sections</strong>
+<p>In the editor, scroll to the bottom of the sidebar and choose <strong>Add section</strong>. Sections in the home-page group appear under <em>Add section</em> on the home page only; template sections appear when the matching template is being edited.</p>
+</div>
+
+<h2 id="how-to-read-these-tables">How to read these tables</h2>
+<p><strong>Setting</strong> is the key used in <code>templates/*.json</code> and in <code>settings_data.json</code>, which is what you will need when duplicating a section or asking for support. <strong>Default</strong> is the value the theme ships with — not the value in your store, which may differ once you have edited it.</p>
+
+<h2 id="home-page">Home page</h2>
+<p>Thirteen numbered sections ship in <code>templates/index.json</code>, in this order. Delete, duplicate or reorder them freely — the numbers are labels, not dependencies.</p>
+    <div class="section-card">
+      <div class="section-card__head"><span class="section-card__num">01</span><h3 id="editorial-hero">Editorial hero</h3><span class="section-card__file">pawform-hero.liquid · 15 settings</span></div>
+<p>The opening panel: an eyebrow, a serif headline with an italic script line under it, two buttons and a captioned image. <code>flip</code> mirrors the whole layout, which is the only reason to use it — keep the first section on the same side as the rest of the page.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>eyebrow</code></td><td>Eyebrow</td><td>text</td><td><span title="THE DIGITAL WARDROBE / EST. 2024">THE DIGITAL WARDROBE / EST. 2024</span></td></tr>
+        <tr><td><code>title</code></td><td>Heading</td><td>text</td><td><span title="A digital wardrobe for pets who dress well.">A digital wardrobe for pets who dress well.</span></td></tr>
+        <tr><td><code>title_script</code></td><td>Script subheading</td><td>text</td><td><span title="dressed with love">dressed with love</span></td></tr>
+        <tr><td><code>description</code></td><td>Description</td><td>long text</td><td><span title="Sixteen complete looks and forty-eight pieces you can w…">Sixteen complete looks and forty-eight pieces you can w…</span></td></tr>
+        <tr><td><code>button_label</code></td><td>Primary button label</td><td>text</td><td><span title="Browse the looks">Browse the looks</span></td></tr>
+        <tr><td><code>button_link</code></td><td>Primary button link</td><td>URL</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>button2_label</code></td><td>Secondary button label</td><td>text</td><td><span title="Shop the pieces">Shop the pieces</span></td></tr>
+        <tr><td><code>button2_link</code></td><td>Secondary button link</td><td>URL</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>meta</code></td><td>Bottom note</td><td>text</td><td><span title="16 LOOKS / 48 PIECES / 01 VERY GOOD BOY">16 LOOKS / 48 PIECES / 01 VERY GOOD BOY</span></td></tr>
+        <tr><td><code>image</code></td><td>Main image (leave empty for the bundled asset)</td><td>image</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>fallback_image</code></td><td>Bundled main image</td><td>dropdown</td><td><span title="pet-tea-party">pet-tea-party</span></td></tr>
+        <tr><td><code>badge</code></td><td>Image badge</td><td>text</td><td><span title="LOOK 01 / 16">LOOK 01 / 16</span></td></tr>
+        <tr><td><code>caption</code></td><td>Image caption</td><td>text</td><td><span title="PEACH TEA · MOCHI THE RAGDOLL">PEACH TEA · MOCHI THE RAGDOLL</span></td></tr>
+        <tr><td><code>scheme</code></td><td>Colours</td><td>dropdown</td><td><span title="paper">paper</span></td></tr>
+        <tr><td><code>flip</code></td><td>Swap image and text sides</td><td>checkbox</td><td>Off</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-card__head"><span class="section-card__num">02</span><h3 id="marquee">Marquee</h3><span class="section-card__file">pawform-marquee.liquid · 5 settings</span></div>
+<p>A full-width band of oversized italic type that scrolls continuously. <code>scale</code> changes height and type size together; use it as a breather between two busy sections.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>text</code></td><td>Scrolling text</td><td>text</td><td><span title="WELL-DRESSED PETS · CURATED LOOKS · MADE WITH CARE">WELL-DRESSED PETS · CURATED LOOKS · MADE WITH CARE</span></td></tr>
+        <tr><td><code>scale</code></td><td>Overall scale (height / type)</td><td>slider</td><td><span title="100">100</span></td></tr>
+        <tr><td><code>speed</code></td><td>Scroll duration (seconds)</td><td>slider</td><td><span title="28">28</span></td></tr>
+        <tr><td><code>direction</code></td><td>Direction</td><td>dropdown</td><td><span title="left">left</span></td></tr>
+        <tr><td><code>scheme</code></td><td>Colours</td><td>dropdown</td><td><span title="ink">ink</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-card__head"><span class="section-card__num">03</span><h3 id="featured-looks">Featured looks</h3><span class="section-card__file">pawform-featured-looks.liquid · 13 settings</span></div>
+<p>A grid or slider of product cards drawn from a collection, a product list, or the bundled demo data. This is the main way customers reach looks.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>eyebrow</code></td><td>Eyebrow</td><td>text</td><td><span title="THE EDIT">THE EDIT</span></td></tr>
+        <tr><td><code>title</code></td><td>Heading</td><td>text</td><td><span title="Four looks to start with.">Four looks to start with.</span></td></tr>
+        <tr><td><code>description</code></td><td>Description</td><td>long text</td><td><span title="The most-loved sets from all sixteen, with the full thr…">The most-loved sets from all sixteen, with the full thr…</span></td></tr>
+        <tr><td><code>source</code></td><td>Source</td><td>dropdown</td><td><span title="demo">demo</span></td></tr>
+        <tr><td><code>collection</code></td><td>Select a collection</td><td>collection</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>product_list</code></td><td>Select products</td><td>product list</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>limit</code></td><td>Items to show</td><td>slider</td><td><span title="4">4</span></td></tr>
+        <tr><td><code>columns</code></td><td>Cards per row</td><td>dropdown</td><td><span title="4">4</span></td></tr>
+        <tr><td><code>card_style</code></td><td>Card style</td><td>dropdown</td><td><span title="grid">grid</span></td></tr>
+        <tr><td><code>link_label</code></td><td>Bottom link label</td><td>text</td><td><span title="See all 16 looks">See all 16 looks</span></td></tr>
+        <tr><td><code>link</code></td><td>Bottom link</td><td>URL</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>foot_note</code></td><td>Bottom-right note</td><td>text</td><td><span title="UPDATED WEEKLY">UPDATED WEEKLY</span></td></tr>
+        <tr><td><code>loading_label</code></td><td>Loading placeholder</td><td>text</td><td><span title="Pulling the looks together…">Pulling the looks together…</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-card__head"><span class="section-card__num">04</span><h3 id="stats-bar">Stats bar</h3><span class="section-card__file">pawform-stats.liquid · 13 settings</span></div>
+<p>Four number/label pairs on the dark scheme. Best used once, immediately after the hero, to set expectations about range.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>scheme</code></td><td>Colours</td><td>dropdown</td><td><span title="ink">ink</span></td></tr>
+        <tr><td><code>stat_1_value</code></td><td>Number 1</td><td>text</td><td><span title="16">16</span></td></tr>
+        <tr><td><code>stat_1_label</code></td><td>Tag 1</td><td>text</td><td><span title="COMPLETE LOOKS">COMPLETE LOOKS</span></td></tr>
+        <tr><td><code>stat_1_sub</code></td><td>Note 1</td><td>text</td><td><span title="complete looks">complete looks</span></td></tr>
+        <tr><td><code>stat_2_value</code></td><td>Number 2</td><td>text</td><td><span title="48">48</span></td></tr>
+        <tr><td><code>stat_2_label</code></td><td>Tag 2</td><td>text</td><td><span title="INDIVIDUAL PIECES">INDIVIDUAL PIECES</span></td></tr>
+        <tr><td><code>stat_2_sub</code></td><td>Note 2</td><td>text</td><td><span title="sold on their own">sold on their own</span></td></tr>
+        <tr><td><code>stat_3_value</code></td><td>Number 3</td><td>text</td><td><span title="12">12</span></td></tr>
+        <tr><td><code>stat_3_label</code></td><td>Tag 3</td><td>text</td><td><span title="SCENES">SCENES</span></td></tr>
+        <tr><td><code>stat_3_sub</code></td><td>Note 3</td><td>text</td><td><span title="everyday scenes">everyday scenes</span></td></tr>
+        <tr><td><code>stat_4_value</code></td><td>Number 4</td><td>text</td><td><span title="100%">100%</span></td></tr>
+        <tr><td><code>stat_4_label</code></td><td>Tag 4</td><td>text</td><td><span title="MADE WITH CARE">MADE WITH CARE</span></td></tr>
+        <tr><td><code>stat_4_sub</code></td><td>Note 4</td><td>text</td><td><span title="chosen for every pet">chosen for every pet</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-card__head"><span class="section-card__num">05</span><h3 id="product-grid">Product grid</h3><span class="section-card__file">pawform-product-grid.liquid · 19 settings</span></div>
+<p>The individual-pieces grid, with optional quick filters that only filter what is already rendered on the page.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>eyebrow</code></td><td>Eyebrow</td><td>text</td><td><span title="THE PIECES">THE PIECES</span></td></tr>
+        <tr><td><code>title</code></td><td>Heading</td><td>text</td><td><span title="Good on their own, too.">Good on their own, too.</span></td></tr>
+        <tr><td><code>description</code></td><td>Description</td><td>long text</td><td><span title="Tops, hats and accessories — each sold separately, each…">Tops, hats and accessories — each sold separately, each…</span></td></tr>
+        <tr><td><code>source</code></td><td>Source</td><td>dropdown</td><td><span title="demo">demo</span></td></tr>
+        <tr><td><code>collection</code></td><td>Select a collection</td><td>collection</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>product_list</code></td><td>Select products</td><td>product list</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>sort</code></td><td>Sort order</td><td>dropdown</td><td><span title="manual">manual</span></td></tr>
+        <tr><td><code>limit</code></td><td>Items to show</td><td>slider</td><td><span title="8">8</span></td></tr>
+        <tr><td><code>columns</code></td><td>Cards per row</td><td>dropdown</td><td><span title="4">4</span></td></tr>
+        <tr><td><code>category</code></td><td>Demo data · piece category</td><td>dropdown</td><td><span title="all">all</span></td></tr>
+        <tr><td><code>show_filters</code></td><td>Show quick filters</td><td>checkbox</td><td>On</td></tr>
+        <tr><td><code>filter_all</code></td><td>Filter · All</td><td>text</td><td><span title="All pieces">All pieces</span></td></tr>
+        <tr><td><code>filter_1</code></td><td>Filter · Category 1</td><td>text</td><td><span title="Tops">Tops</span></td></tr>
+        <tr><td><code>filter_2</code></td><td>Filter · Category 2</td><td>text</td><td><span title="Hats">Hats</span></td></tr>
+        <tr><td><code>filter_3</code></td><td>Filter · Category 3</td><td>text</td><td><span title="Accessories">Accessories</span></td></tr>
+        <tr><td><code>link_label</code></td><td>Bottom link label</td><td>text</td><td><span title="Shop all pieces">Shop all pieces</span></td></tr>
+        <tr><td><code>link</code></td><td>Bottom link</td><td>URL</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>foot_note</code></td><td>Bottom-right note</td><td>text</td><td><span title="NEW SEASON · WORLDWIDE SHIPPING">NEW SEASON · WORLDWIDE SHIPPING</span></td></tr>
+        <tr><td><code>loading_label</code></td><td>Loading placeholder</td><td>text</td><td><span title="Fetching the pieces…">Fetching the pieces…</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-card__head"><span class="section-card__num">06</span><h3 id="brand-story">Brand story</h3><span class="section-card__file">pawform-story.liquid · 16 settings</span></div>
+<p>A two-column story block: rich text, a pull quote, three short facts and an optional image. The image falls back to a bundled photograph when none is picked.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>eyebrow</code></td><td>Eyebrow</td><td>text</td><td><span title="OUR STORY">OUR STORY</span></td></tr>
+        <tr><td><code>title</code></td><td>Heading</td><td>text</td><td><span title="Clothes are the small part. Being taken seriously is th…">Clothes are the small part. Being taken seriously is th…</span></td></tr>
+        <tr><td><code>script</code></td><td>Script line</td><td>text</td><td><span title="every pet deserves a fitting">every pet deserves a fitting</span></td></tr>
+        <tr><td><code>body</code></td><td>Body</td><td>rich text</td><td><span title="PetPet started as a pencil sketch of a pet wardrobe: ev…">PetPet started as a pencil sketch of a pet wardrobe: ev…</span></td></tr>
+        <tr><td><code>quote</code></td><td>Quote</td><td>text</td><td><span title="Looking good is not the point. Fitting comfortably — an…">Looking good is not the point. Fitting comfortably — an…</span></td></tr>
+        <tr><td><code>quote_by</code></td><td>Quote credit</td><td>text</td><td><span title="THE PETPET STUDIO">THE PETPET STUDIO</span></td></tr>
+        <tr><td><code>fact_1</code></td><td>Point 1</td><td>text</td><td><span title="Organised by occasion, not by category">Organised by occasion, not by category</span></td></tr>
+        <tr><td><code>fact_2</code></td><td>Point 2</td><td>text</td><td><span title="Three-piece sets take 10% off, applied at checkout">Three-piece sets take 10% off, applied at checkout</span></td></tr>
+        <tr><td><code>fact_3</code></td><td>Point 3</td><td>text</td><td><span title="Saved looks live on your device — no account needed">Saved looks live on your device — no account needed</span></td></tr>
+        <tr><td><code>button_label</code></td><td>Button label</td><td>text</td><td><span title="See the looks">See the looks</span></td></tr>
+        <tr><td><code>button_link</code></td><td>Button link</td><td>URL</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>image</code></td><td>Image (leave empty for the bundled asset)</td><td>image</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>fallback_image</code></td><td>Bundled image</td><td>dropdown</td><td><span title="pet-slow-mornings">pet-slow-mornings</span></td></tr>
+        <tr><td><code>image_label</code></td><td>Image badge</td><td>text</td><td><span title="SLOW MORNINGS / LOOK 09">SLOW MORNINGS / LOOK 09</span></td></tr>
+        <tr><td><code>scheme</code></td><td>Colours</td><td>dropdown</td><td><span title="paper">paper</span></td></tr>
+        <tr><td><code>flip</code></td><td>Swap image and text sides</td><td>checkbox</td><td>Off</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-card__head"><span class="section-card__num">07</span><h3 id="service-icons">Service icons</h3><span class="section-card__file">pawform-features.liquid · 14 settings</span></div>
+<p>Four icon + heading + note cards. Icons are a fixed set drawn from the theme's own SVG sprite, not an upload.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>eyebrow</code></td><td>Eyebrow</td><td>text</td><td><span title="WHY PETPET">WHY PETPET</span></td></tr>
+        <tr><td><code>title</code></td><td>Heading</td><td>text</td><td><span title="Four small things done properly">Four small things done properly</span></td></tr>
+        <tr><td><code>icon_1</code></td><td>Icon 1</td><td>dropdown</td><td><span title="sparkle">sparkle</span></td></tr>
+        <tr><td><code>title_1</code></td><td>Heading 1</td><td>text</td><td><span title="Dressed for the occasion">Dressed for the occasion</span></td></tr>
+        <tr><td><code>text_1</code></td><td>Note 1</td><td>long text</td><td><span title="Afternoon tea, rainy days, night walks — decide where y…">Afternoon tea, rainy days, night walks — decide where y…</span></td></tr>
+        <tr><td><code>icon_2</code></td><td>Icon 2</td><td>dropdown</td><td><span title="ruler">ruler</span></td></tr>
+        <tr><td><code>title_2</code></td><td>Heading 2</td><td>text</td><td><span title="Sizing you can check">Sizing you can check</span></td></tr>
+        <tr><td><code>text_2</code></td><td>Note 2</td><td>long text</td><td><span title="Every piece lists the measurements it fits, so a full l…">Every piece lists the measurements it fits, so a full l…</span></td></tr>
+        <tr><td><code>icon_3</code></td><td>Icon 3</td><td>dropdown</td><td><span title="heart">heart</span></td></tr>
+        <tr><td><code>title_3</code></td><td>Heading 3</td><td>text</td><td><span title="Favourites that stay">Favourites that stay</span></td></tr>
+        <tr><td><code>text_3</code></td><td>Note 3</td><td>long text</td><td><span title="Looks and pieces you save are kept on this device, righ…">Looks and pieces you save are kept on this device, righ…</span></td></tr>
+        <tr><td><code>icon_4</code></td><td>Icon 4</td><td>dropdown</td><td><span title="shield">shield</span></td></tr>
+        <tr><td><code>title_4</code></td><td>Heading 4</td><td>text</td><td><span title="Easy returns">Easy returns</span></td></tr>
+        <tr><td><code>text_4</code></td><td>Note 4</td><td>long text</td><td><span title="Unopened pieces go back within 30 days. Write to us and…">Unopened pieces go back within 30 days. Write to us and…</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-card__head"><span class="section-card__num">08</span><h3 id="quote">Quote</h3><span class="section-card__file">pawform-quote.liquid · 5 settings</span></div>
+<p>A single large quotation with an italic script caption. Intentionally narrow — long copy will look cramped.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>eyebrow</code></td><td>Eyebrow</td><td>text</td><td><span title="A NOTE FROM THE STUDIO">A NOTE FROM THE STUDIO</span></td></tr>
+        <tr><td><code>quote</code></td><td>Quote</td><td>long text</td><td><span title="We have always felt that choosing clothes for them is a…">We have always felt that choosing clothes for them is a…</span></td></tr>
+        <tr><td><code>script</code></td><td>Script caption</td><td>text</td><td><span title="seen, loved, well-dressed">seen, loved, well-dressed</span></td></tr>
+        <tr><td><code>by</code></td><td>Credit</td><td>text</td><td><span title="PETPET STUDIO">PETPET STUDIO</span></td></tr>
+        <tr><td><code>scheme</code></td><td>Colours</td><td>dropdown</td><td><span title="paper">paper</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-card__head"><span class="section-card__num">09</span><h3 id="image-collage">Image collage</h3><span class="section-card__file">pawform-collage.liquid · 11 settings</span></div>
+<p>Four captioned images in a staggered layout. Each slot falls back to a bundled photograph, so the section looks complete before you add assets.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>eyebrow</code></td><td>Eyebrow</td><td>text</td><td><span title="FROM THE ARCHIVE">FROM THE ARCHIVE</span></td></tr>
+        <tr><td><code>title</code></td><td>Heading</td><td>text</td><td><span title="Moments we kept.">Moments we kept.</span></td></tr>
+        <tr><td><code>description</code></td><td>Description</td><td>long text</td><td><span title="We photographed every fitting. Here are four of them, a…">We photographed every fitting. Here are four of them, a…</span></td></tr>
+        <tr><td><code>image_1</code></td><td>Image 1 (leave empty for the bundled asset)</td><td>image</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>caption_1</code></td><td>Caption 1</td><td>text</td><td><span title="PEACH TEA · AFTERNOON LIGHT">PEACH TEA · AFTERNOON LIGHT</span></td></tr>
+        <tr><td><code>image_2</code></td><td>Image 2 (leave empty for the bundled asset)</td><td>image</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>caption_2</code></td><td>Caption 2</td><td>text</td><td><span title="GLACIE · BLUE HOUR">GLACIE · BLUE HOUR</span></td></tr>
+        <tr><td><code>image_3</code></td><td>Image 3 (leave empty for the bundled asset)</td><td>image</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>caption_3</code></td><td>Caption 3</td><td>text</td><td><span title="MOUNTAIN CLUB · TRAIL READY">MOUNTAIN CLUB · TRAIL READY</span></td></tr>
+        <tr><td><code>image_4</code></td><td>Image 4 (leave empty for the bundled asset)</td><td>image</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>caption_4</code></td><td>Caption 4</td><td>text</td><td><span title="ROSE WALTZ · VELVET EVENING">ROSE WALTZ · VELVET EVENING</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-card__head"><span class="section-card__num">10</span><h3 id="testimonials">Testimonials</h3><span class="section-card__file">pawform-testimonials.liquid · 12 settings</span></div>
+<p>Three reviews with credit and subtitle. The subtitle is the right place for breed, size and the look the pet is wearing.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>eyebrow</code></td><td>Eyebrow</td><td>text</td><td><span title="GOOD BOYS &amp; GIRLS">GOOD BOYS &amp; GIRLS</span></td></tr>
+        <tr><td><code>title</code></td><td>Heading</td><td>text</td><td><span title="They cannot tell you. Their tails can.">They cannot tell you. Their tails can.</span></td></tr>
+        <tr><td><code>description</code></td><td>Description</td><td>long text</td><td><span title="Notes from PetPet households.">Notes from PetPet households.</span></td></tr>
+        <tr><td><code>quote_1</code></td><td>Review 1</td><td>long text</td><td><span title="The first time dressing my cat felt like styling my own…">The first time dressing my cat felt like styling my own…</span></td></tr>
+        <tr><td><code>name_1</code></td><td>Credit 1</td><td>text</td><td><span title="Mochi&#x27;s human">Mochi&#x27;s human</span></td></tr>
+        <tr><td><code>sub_1</code></td><td>Subtitle 1</td><td>text</td><td><span title="RAGDOLL · TEA PARTY">RAGDOLL · TEA PARTY</span></td></tr>
+        <tr><td><code>quote_2</code></td><td>Review 2</td><td>long text</td><td><span title="The bright yellow rain set photographs beautifully. On…">The bright yellow rain set photographs beautifully. On…</span></td></tr>
+        <tr><td><code>name_2</code></td><td>Credit 2</td><td>text</td><td><span title="Pudding&#x27;s human">Pudding&#x27;s human</span></td></tr>
+        <tr><td><code>sub_2</code></td><td>Subtitle 2</td><td>text</td><td><span title="BRITISH SHORTHAIR · RAINY DAYS">BRITISH SHORTHAIR · RAINY DAYS</span></td></tr>
+        <tr><td><code>quote_3</code></td><td>Review 3</td><td>long text</td><td><span title="The saved list rescued me. After three days of ditherin…">The saved list rescued me. After three days of ditherin…</span></td></tr>
+        <tr><td><code>name_3</code></td><td>Credit 3</td><td>text</td><td><span title="Dumpling&#x27;s human">Dumpling&#x27;s human</span></td></tr>
+        <tr><td><code>sub_3</code></td><td>Subtitle 3</td><td>text</td><td><span title="SHIBA INU · ROAD TRIP">SHIBA INU · ROAD TRIP</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-card__head"><span class="section-card__num">11</span><h3 id="faq">FAQ</h3><span class="section-card__file">pawform-faq.liquid · 17 settings</span></div>
+<p>Up to six question/answer pairs rendered as a native <code>&lt;details&gt;</code> accordion — no JavaScript, and it prints open.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>eyebrow</code></td><td>Eyebrow</td><td>text</td><td><span title="GOOD TO KNOW">GOOD TO KNOW</span></td></tr>
+        <tr><td><code>title</code></td><td>Heading</td><td>text</td><td><span title="A few things you might still be wondering.">A few things you might still be wondering.</span></td></tr>
+        <tr><td><code>description</code></td><td>Description</td><td>long text</td><td><span title="Sizing, delivery, returns and care — the questions we a…">Sizing, delivery, returns and care — the questions we a…</span></td></tr>
+        <tr><td><code>open_first</code></td><td>Open the first item by default</td><td>checkbox</td><td>On</td></tr>
+        <tr><td><code>q_1</code></td><td>Question 1</td><td>text</td><td><span title="How do I choose a size?">How do I choose a size?</span></td></tr>
+        <tr><td><code>a_1</code></td><td>Answer 1</td><td>rich text</td><td><span title="Every product page lists the chest, back and neck measu…">Every product page lists the chest, back and neck measu…</span></td></tr>
+        <tr><td><code>q_2</code></td><td>Question 2</td><td>text</td><td><span title="When will it arrive?">When will it arrive?</span></td></tr>
+        <tr><td><code>a_2</code></td><td>Answer 2</td><td>rich text</td><td><span title="In-stock orders leave within 2–4 working days; made-to-…">In-stock orders leave within 2–4 working days; made-to-…</span></td></tr>
+        <tr><td><code>q_3</code></td><td>Question 3</td><td>text</td><td><span title="Can I return or exchange?">Can I return or exchange?</span></td></tr>
+        <tr><td><code>a_3</code></td><td>Answer 3</td><td>rich text</td><td><span title="Unopened pieces can be returned or exchanged within 30…">Unopened pieces can be returned or exchanged within 30…</span></td></tr>
+        <tr><td><code>q_4</code></td><td>Question 4</td><td>text</td><td><span title="Is there a discount for buying a set?">Is there a discount for buying a set?</span></td></tr>
+        <tr><td><code>a_4</code></td><td>Answer 4</td><td>rich text</td><td><span title="Buy all three pieces of a look together and 10% comes o…">Buy all three pieces of a look together and 10% comes o…</span></td></tr>
+        <tr><td><code>q_5</code></td><td>Question 5</td><td>text</td><td><span title="Are the materials safe? How do I wash them?">Are the materials safe? How do I wash them?</span></td></tr>
+        <tr><td><code>a_5</code></td><td>Answer 5</td><td>rich text</td><td><span title="Fabrics are mainly washable cotton, wool and recycled p…">Fabrics are mainly washable cotton, wool and recycled p…</span></td></tr>
+        <tr><td><code>q_6</code></td><td>Question 6</td><td>text</td><td><span title="Do you have a shop, or work with stockists?">Do you have a shop, or work with stockists?</span></td></tr>
+        <tr><td><code>a_6</code></td><td>Answer 6</td><td>rich text</td><td><span title="Online only for now. For wholesale or collaborations, w…">Online only for now. For wholesale or collaborations, w…</span></td></tr>
+        <tr><td><code>foot_note</code></td><td>Bottom hint</td><td>text</td><td><span title="Anything else? Write to hello@petpet.studio.">Anything else? Write to hello@petpet.studio.</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-card__head"><span class="section-card__num">12</span><h3 id="newsletter">Newsletter</h3><span class="section-card__file">pawform-newsletter.liquid · 9 settings</span></div>
+<p>A Shopify customer form, so it feeds the same customer list as checkout. It posts to <code>/contact#newsletter</code> and shows the success message in place.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>eyebrow</code></td><td>Eyebrow</td><td>text</td><td><span title="THE LETTER">THE LETTER</span></td></tr>
+        <tr><td><code>title</code></td><td>Heading</td><td>text</td><td><span title="New looks, before anyone else.">New looks, before anyone else.</span></td></tr>
+        <tr><td><code>script</code></td><td>Script caption</td><td>text</td><td><span title="a little note, now and then">a little note, now and then</span></td></tr>
+        <tr><td><code>description</code></td><td>Description</td><td>long text</td><td><span title="No discount blasts. Just new looks, styling notes and a…">No discount blasts. Just new looks, styling notes and a…</span></td></tr>
+        <tr><td><code>input_label</code></td><td>Input label</td><td>text</td><td><span title="EMAIL ADDRESS">EMAIL ADDRESS</span></td></tr>
+        <tr><td><code>placeholder</code></td><td>Placeholder text</td><td>text</td><td><span title="you@example.com">you@example.com</span></td></tr>
+        <tr><td><code>button_label</code></td><td>Button label</td><td>text</td><td><span title="Subscribe">Subscribe</span></td></tr>
+        <tr><td><code>success</code></td><td>Success message</td><td>text</td><td><span title="You are in. Thanks for being here ✳">You are in. Thanks for being here ✳</span></td></tr>
+        <tr><td><code>note</code></td><td>Privacy note</td><td>text</td><td><span title="By subscribing you agree to receive emails from PetPet.…">By subscribing you agree to receive emails from PetPet.…</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-card__head"><span class="section-card__num">13</span><h3 id="call-to-action">Call to action</h3><span class="section-card__file">pawform-cta.liquid · 11 settings</span></div>
+<p>The closing dark panel with two buttons and an oversized decorative word behind them.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>eyebrow</code></td><td>Eyebrow</td><td>text</td><td><span title="YOUR TURN">YOUR TURN</span></td></tr>
+        <tr><td><code>title</code></td><td>Heading</td><td>text</td><td><span title="Which look is it wearing today?">Which look is it wearing today?</span></td></tr>
+        <tr><td><code>script</code></td><td>Script caption</td><td>text</td><td><span title="let the fitting begin">let the fitting begin</span></td></tr>
+        <tr><td><code>description</code></td><td>Description</td><td>long text</td><td><span title="Back to the runway: arrow keys, scroll wheel or drag th…">Back to the runway: arrow keys, scroll wheel or drag th…</span></td></tr>
+        <tr><td><code>button_label</code></td><td>Primary button label</td><td>text</td><td><span title="Enter the runway">Enter the runway</span></td></tr>
+        <tr><td><code>button_link</code></td><td>Primary button link</td><td>URL</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>button2_label</code></td><td>Secondary button label</td><td>text</td><td><span title="Shop the pieces">Shop the pieces</span></td></tr>
+        <tr><td><code>button2_link</code></td><td>Secondary button link</td><td>URL</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>foot_note</code></td><td>Bottom note</td><td>text</td><td><span title="NO ACCOUNT NEEDED · JUST PICK A LOOK">NO ACCOUNT NEEDED · JUST PICK A LOOK</span></td></tr>
+        <tr><td><code>ghost</code></td><td>Decorative background word</td><td>text</td><td><span title="PETPET">PETPET</span></td></tr>
+        <tr><td><code>scheme</code></td><td>Colours</td><td>dropdown</td><td><span title="ink">ink</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+<h2 id="header-and-footer">Header and footer</h2>
+<p>These two live in section groups, which is what makes them appear on every template instead of one page.</p>
+    <div class="section-card">
+      <div class="section-card__head"><h3 id="header">Header</h3><span class="section-card__file">pawform-header.liquid · 8 settings</span></div>
+<p>Lives in the header section group, so it appears on every page. The menu is a Shopify navigation menu you create in admin, not a list inside the theme.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>sticky_header</code></td><td>Pin the header while scrolling</td><td>checkbox</td><td>On</td></tr>
+        <tr><td><code>layout</code></td><td>Layout</td><td>dropdown</td><td><span title="logo-menu-left">logo-menu-left</span></td></tr>
+        <tr><td><code>menu</code></td><td>Select a menu</td><td>menu</td><td><span title="main-menu">main-menu</span></td></tr>
+        <tr><td><code>show_search</code></td><td>Show the search button</td><td>checkbox</td><td>On</td></tr>
+        <tr><td><code>show_favorites</code></td><td>Show saved items</td><td>checkbox</td><td>On</td></tr>
+        <tr><td><code>show_account</code></td><td>Show the account link</td><td>checkbox</td><td>On</td></tr>
+        <tr><td><code>customer_account_menu</code></td><td>Account menu</td><td>menu</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>show_bag</code></td><td>Show the bag link (goes to the Shopify cart)</td><td>checkbox</td><td>On</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-card__head"><h3 id="footer">Footer</h3><span class="section-card__file">pawform-footer.liquid · 14 settings</span></div>
+<p>Lives in the footer section group. It contains up to three menus, three inline social links, the country/region and language selectors, and the back-to-top control.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>left_label</code></td><td>Column heading</td><td>text</td><td><span title="ELSEWHERE">ELSEWHERE</span></td></tr>
+        <tr><td><code>left_menu</code></td><td>Left menu</td><td>menu</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>social_1_label</code></td><td>Inline link 1</td><td>text</td><td><span title="INSTAGRAM">INSTAGRAM</span></td></tr>
+        <tr><td><code>social_1_url</code></td><td>Inline link 1 URL</td><td>URL</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>social_2_label</code></td><td>Inline link 2</td><td>text</td><td><span title="TIKTOK">TIKTOK</span></td></tr>
+        <tr><td><code>social_2_url</code></td><td>Inline link 2 URL</td><td>URL</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>social_3_label</code></td><td>Inline link 3</td><td>text</td><td><span title="PINTEREST">PINTEREST</span></td></tr>
+        <tr><td><code>social_3_url</code></td><td>Inline link 3 URL</td><td>URL</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>footer_script</code></td><td>Script line</td><td>text</td><td><span title="Curated with care">Curated with care</span></td></tr>
+        <tr><td><code>byline</code></td><td>Credit</td><td>text</td><td><span title="I love life, but I love you even more.">I love life, but I love you even more.</span></td></tr>
+        <tr><td><code>center_menu</code></td><td>Centre menu</td><td>menu</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>right_menu</code></td><td>Right menu</td><td>menu</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>show_top</code></td><td>Show back to top</td><td>checkbox</td><td>On</td></tr>
+        <tr><td><code>legal_note</code></td><td>Bottom description</td><td>text</td><td><span title="Free-shipping threshold, delivery times and taxes are c…">Free-shipping threshold, delivery times and taxes are c…</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+<h2 id="templates">Templates</h2>
+<p>Sections used by the other templates: product, collection, cart, blog, search, the account-adjacent pages and the utility templates.</p>
+    <div class="section-card">
+      <div class="section-card__head"><h3 id="runway">Runway</h3><span class="section-card__file">pawform-wardrobe.liquid · 4 settings</span></div>
+<p>The look browser. It reads its content from <strong>set</strong> blocks, each containing one complete look: a name, a scene, a hero image and the pieces that make it up. The rail on the right lists the pieces of the current look.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>show_bar</code></td><td>Show the bottom progress bar</td><td>checkbox</td><td>On</td></tr>
+        <tr><td><code>show_rail</code></td><td>Show the piece list on the right</td><td>checkbox</td><td>On</td></tr>
+        <tr><td><code>rail_visible</code></td><td>Show the piece count on the right</td><td>slider</td><td><span title="3">3</span></td></tr>
+        <tr><td><code>initial_look</code></td><td>Starting index</td><td>slider</td><td><span title="1">1</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-card__head"><h3 id="product">Product</h3><span class="section-card__file">pawform-main-product.liquid · 4 settings</span></div>
+<p>The product template. Its content is assembled from blocks, so the order below is the order customers read.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>stock_text</code></td><td>In-stock label</td><td>text</td><td><span title="In stock · ships in 2–4 working days">In stock · ships in 2–4 working days</span></td></tr>
+        <tr><td><code>show_jsonld</code></td><td>Output Product structured data (JSON-LD)</td><td>checkbox</td><td>On</td></tr>
+        <tr><td><code>show_related</code></td><td>Show pieces from the same collection</td><td>checkbox</td><td>On</td></tr>
+        <tr><td><code>related_limit</code></td><td>Items to show</td><td>slider</td><td><span title="4">4</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-card__head"><h3 id="collection">Collection</h3><span class="section-card__file">pawform-main-collection.liquid · 6 settings</span></div>
+<p>Collection listing. <code>show_filters</code> uses Shopify's own storefront filtering, which needs the Search &amp; Discovery app enabled in admin.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>per_page</code></td><td>Products per page</td><td>slider</td><td><span title="24">24</span></td></tr>
+        <tr><td><code>columns</code></td><td>Products per row</td><td>slider</td><td><span title="4">4</span></td></tr>
+        <tr><td><code>show_sort</code></td><td>Show sorting</td><td>checkbox</td><td>On</td></tr>
+        <tr><td><code>show_filters</code></td><td>Show storefront filters</td><td>checkbox</td><td>On</td></tr>
+        <tr><td><code>show_tags</code></td><td>Show tags when filters are off</td><td>checkbox</td><td>On</td></tr>
+        <tr><td><code>show_description</code></td><td>Show the collection description</td><td>checkbox</td><td>On</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-card__head"><h3 id="cart">Cart</h3><span class="section-card__file">pawform-main-cart.liquid · 5 settings</span></div>
+<p>The cart page. The drawer reuses the same line-item snippet, so styling changes apply to both.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>title</code></td><td>Heading</td><td>text</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>intro</code></td><td>Subheading</td><td>text</td><td><span title="Check the pieces and quantities, then head to checkout.">Check the pieces and quantities, then head to checkout.</span></td></tr>
+        <tr><td><code>empty_text</code></td><td>Empty bag copy</td><td>text</td><td><span title="Have a look at this season&#x27;s looks and pieces, and take…">Have a look at this season&#x27;s looks and pieces, and take…</span></td></tr>
+        <tr><td><code>show_note</code></td><td>Show the order note</td><td>checkbox</td><td>On</td></tr>
+        <tr><td><code>note</code></td><td>Checkout note</td><td>long text</td><td><span title="Checkout is handled securely by Shopify, with card, Pay…">Checkout is handled securely by Shopify, with card, Pay…</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-card__head"><h3 id="blog">Blog</h3><span class="section-card__file">pawform-main-blog.liquid · 5 settings</span></div>
+<p>Blog listing with an optional feature treatment for the first post.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>per_page</code></td><td>Posts per page</td><td>slider</td><td><span title="9">9</span></td></tr>
+        <tr><td><code>feature_first</code></td><td>Feature the first post with a large image</td><td>checkbox</td><td>On</td></tr>
+        <tr><td><code>show_excerpt</code></td><td>Show the summary</td><td>checkbox</td><td>On</td></tr>
+        <tr><td><code>show_rss</code></td><td>Show the RSS link</td><td>checkbox</td><td>On</td></tr>
+        <tr><td><code>back_link</code></td><td>Top-right back link (optional)</td><td>URL</td><td><span style="color:#8d8983">—</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-card__head"><h3 id="article">Article</h3><span class="section-card__file">pawform-main-article.liquid · 1 settings</span></div>
+<p>A single post, with comments toggled by one setting.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>show_comments</code></td><td>Show comments</td><td>checkbox</td><td>On</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-card__head"><h3 id="search">Search</h3><span class="section-card__file">pawform-main-search.liquid · 1 settings</span></div>
+<p>Search results, paginated. It renders the same product card as every other grid.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>per_page</code></td><td>Results per page</td><td>slider</td><td><span title="24">24</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-card__head"><h3 id="404-page">404 page</h3><span class="section-card__file">pawform-main-404.liquid · 4 settings</span></div>
+<p>Shown for unknown URLs. Both the blog link and the suggested links are optional.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>title</code></td><td>Heading</td><td>text</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>text</code></td><td>Description text</td><td>long text</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>blog_link</code></td><td>Blog link (optional)</td><td>URL</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>menu</code></td><td>Suggested links (optional)</td><td>menu</td><td><span style="color:#8d8983">—</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-card__head"><h3 id="password-gate">Password gate</h3><span class="section-card__file">pawform-main-password.liquid · 2 settings</span></div>
+<p>Shown while the store is password-protected. It has no logo of its own — it inherits the brand name.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>heading</code></td><td>Heading</td><td>text</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>text</code></td><td>Intro text</td><td>long text</td><td><span style="color:#8d8983">—</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-card__head"><h3 id="collections">Collections</h3><span class="section-card__file">pawform-main-list-collections.liquid · 2 settings</span></div>
+<p>The list of collections, used when no collection menus exist yet.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>title</code></td><td>Heading</td><td>text</td><td><span title="Collections">Collections</span></td></tr>
+        <tr><td><code>intro</code></td><td>Intro</td><td>text</td><td><span style="color:#8d8983">—</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-card__head"><h3 id="contact-form">Contact form</h3><span class="section-card__file">pawform-main-contact.liquid · 2 settings</span></div>
+<p>The contact template. Assign it in admin when you create the contact page.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>intro</code></td><td>Intro text</td><td>rich text</td><td><span title="Questions about sizing, shipping or a return? Write to…">Questions about sizing, shipping or a return? Write to…</span></td></tr>
+        <tr><td><code>note</code></td><td>Footnote</td><td>text</td><td><span title="We usually reply within one business day.">We usually reply within one business day.</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-card__head"><h3 id="product-recommendations">Product recommendations</h3><span class="section-card__file">pawform-product-recommendations.liquid · 3 settings</span></div>
+<p>A recommended-products strip for the product template. Shopify decides the recommendations; the section only styles them.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>title</code></td><td>Heading</td><td>text</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>limit</code></td><td>Products to show</td><td>slider</td><td><span title="4">4</span></td></tr>
+        <tr><td><code>columns</code></td><td>Columns</td><td>dropdown</td><td><span title="4">4</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-card__head"><h3 id="pickup-availability">Pickup availability</h3><span class="section-card__file">pf-pickup-availability.liquid · 0 settings</span></div>
+<p>Local pickup availability for a variant. Renders nothing unless the product is stocked at a location with pickup enabled.</p>
+
+    </div>
+
+    <div class="section-card">
+      <div class="section-card__head"><h3 id="custom-liquid">Custom Liquid</h3><span class="section-card__file">custom-liquid.liquid · 2 settings</span></div>
+<p>An escape hatch for your own Liquid, with a heading above it. Use it for one-off embeds rather than editing files.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>heading</code></td><td>Heading</td><td>text</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>custom_liquid</code></td><td>Custom Liquid</td><td>Liquid</td><td><span style="color:#8d8983">—</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="pager"><a class="pager__prev" href="settings.html"><span>Previous</span>Theme settings</a><a class="pager__next" href="products.html"><span>Next</span>Product & cart</a></div>
+  </main>
+
+  <aside class="toc" aria-label="On this page">
+    <p class="toc__label">On this page</p>
+    <ul>
+      <li><a href="#how-to-read-these-tables">How to read these tables</a>
+      </li>
+      <li><a href="#home-page">Home page</a>
+        <ul>
+          <li><a href="#editorial-hero">Editorial hero</a></li>
+          <li><a href="#marquee">Marquee</a></li>
+          <li><a href="#featured-looks">Featured looks</a></li>
+          <li><a href="#stats-bar">Stats bar</a></li>
+          <li><a href="#product-grid">Product grid</a></li>
+          <li><a href="#brand-story">Brand story</a></li>
+          <li><a href="#service-icons">Service icons</a></li>
+          <li><a href="#quote">Quote</a></li>
+          <li><a href="#image-collage">Image collage</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#newsletter">Newsletter</a></li>
+          <li><a href="#call-to-action">Call to action</a></li>
+        </ul>
+      </li>
+      <li><a href="#header-and-footer">Header and footer</a>
+        <ul>
+          <li><a href="#header">Header</a></li>
+          <li><a href="#footer">Footer</a></li>
+        </ul>
+      </li>
+      <li><a href="#templates">Templates</a>
+        <ul>
+          <li><a href="#runway">Runway</a></li>
+          <li><a href="#product">Product</a></li>
+          <li><a href="#collection">Collection</a></li>
+          <li><a href="#cart">Cart</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#article">Article</a></li>
+          <li><a href="#search">Search</a></li>
+          <li><a href="#404-page">404 page</a></li>
+          <li><a href="#password-gate">Password gate</a></li>
+          <li><a href="#collections">Collections</a></li>
+          <li><a href="#contact-form">Contact form</a></li>
+          <li><a href="#product-recommendations">Product recommendations</a></li>
+          <li><a href="#pickup-availability">Pickup availability</a></li>
+          <li><a href="#custom-liquid">Custom Liquid</a></li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <span class="site-footer__script">Dressed with love.</span>
+    <span>PetPet Theme v1.0.2 — documentation for Shopify Online Store 2.0.</span>
+    <span>Fonts bundled under SIL OFL 1.1 · <a href="assets/PF-FONT-LICENSES.txt">licences</a></span>
+    <span style="margin-left:auto"><a href="support.html">Support</a> · <a href="changelog.html">Changelog</a> · <a href="https://github.com/github-oneyue/petpet-theme-docs">Repository</a></span>
+  </div>
+</footer>
+
+<script src="assets/docs.js"></script>
+</body>
+</html>

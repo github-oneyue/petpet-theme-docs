@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Installation — PetPet Theme</title>
+<meta name="description" content="Upload, publish and configure PetPet Theme on a Shopify store in four steps.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Installation — PetPet Theme">
+<meta property="og:description" content="Upload, publish and configure PetPet Theme on a Shopify store in four steps.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://github-oneyue.github.io/petpet-theme-docs/install.html">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/pf-dmsans-001.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/pf-iserif-003.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/docs.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <a class="topbar__brand" href="index.html"><b>PetPet</b><span>Theme documentation</span></a>
+  <div class="topbar__spacer"></div>
+  <div class="topbar__links">
+    <span class="pill" title="Documentation build">v1.0.2</span>
+    <a class="pill" href="support.html">Support</a>
+    <a class="pill pill--ink" href="https://github.com/github-oneyue/petpet-theme-docs">GitHub</a>
+    <button id="navToggle" type="button" aria-expanded="false" aria-controls="sidebar">Contents</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+    <div class="sidebar__inner">
+    <div class="sidebar__group">
+      <p class="sidebar__label">Start here</p>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="install.html" aria-current="page">Installation</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <p class="sidebar__label">Reference</p>
+      <ul>
+        <li><a href="settings.html">Theme settings</a></li>
+        <li><a href="sections.html">Sections</a></li>
+        <li><a href="products.html">Product & cart</a></li>
+        <li><a href="accounts.html">Customer accounts</a></li>
+        <li><a href="typography.html">Typography & fonts</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <p class="sidebar__label">Help</p>
+      <ul>
+        <li><a href="faq.html">FAQ & troubleshooting</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+
+  <main class="content" id="main">
+<p class="eyebrow">Start here</p>
+<h1>Installation</h1>
+<p class="lede">Four steps to a working storefront, then five things to connect before it looks like a shop rather than a theme demo. Nothing here needs code.</p>
+
+<h2 id="before-you-start">Before you start</h2>
+<ul>
+  <li>Shopify admin access with permission to edit themes.</li>
+  <li>The theme file, either from your Theme Store library or as a <code>.zip</code>.</li>
+  <li>At least one product with a price and at least one image.</li>
+  <li>Ten minutes, most of which is spent deciding on colours.</li>
+</ul>
+
+<div class="note">
+<strong>Keep the old theme</strong>
+<p>Shopify keeps every uploaded theme in your library, so publishing a new one never deletes the old. Do not delete the previous theme until you have clicked through the new one on a phone.</p>
+</div>
+
+<h2 id="install">Install</h2>
+
+<h3 id="from-the-theme-store">From the Theme Store</h3>
+<ol class="steps">
+  <li><b>Buy the theme</b><span>After checkout it is added to the theme library of the store you chose. If you bought it for a different store, use the Theme Store account page to assign it.</span></li>
+  <li><b>Open your theme library</b><span>Shopify admin → <strong>Online Store → Themes</strong>. The purchased theme appears as an unpublished theme card.</span></li>
+  <li><b>Customize before publishing</b><span>Click <strong>Customize</strong> on the new card to open the editor. Changes here are saved to that theme only.</span></li>
+  <li><b>Publish</b><span>When you are happy, choose <strong>Publish</strong> from the theme card's action menu. The storefront switches immediately.</span></li>
+</ol>
+
+<h3 id="from-a-zip-file">From a zip file</h3>
+<ol class="steps">
+  <li><b>Upload</b><span><strong>Online Store → Themes → Add theme → Upload zip file</strong>, then select the archive. The zip must contain <code>assets</code>, <code>config</code>, <code>layout</code>, <code>locales</code>, <code>sections</code>, <code>snippets</code> and <code>templates</code> at its top level — a zip that wraps everything in a folder is rejected.</span></li>
+  <li><b>Wait for processing</b><span>Shopify checks the theme and lists it as unpublished. A failure here almost always means a malformed <code>.json</code> file or a missing <code>layout/theme.liquid</code>.</span></li>
+  <li><b>Customize and publish</b><span>Same as above.</span></li>
+</ol>
+
+<h2 id="connect-the-content">Connect the content</h2>
+
+<h3 id="menus">Menus</h3>
+<p>The header renders a Shopify navigation menu, not a list stored in the theme. Create it under <strong>Online Store → Navigation → Add menu</strong>, then point the header section at it.</p>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Where</th><th>Setting</th><th>What to do</th></tr></thead>
+    <tbody>
+      <tr><td>Header</td><td><code>menu</code></td><td>Pick your main menu. It defaults to the menu with the handle <code>main-menu</code>.</td></tr>
+      <tr><td>Footer</td><td><code>left_menu</code>, <code>center_menu</code>, <code>right_menu</code></td><td>Up to three menus. Empty slots simply do not render.</td></tr>
+      <tr><td>Header</td><td><code>customer_account_menu</code></td><td>Optional menu shown to signed-in customers. Only relevant when the store uses classic customer accounts.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h3 id="pages-the-templates-expect">Pages the templates expect</h3>
+<p>A Shopify store always has a cart, a search page, a 404 and a password page; the theme supplies those. Two pages need creating by hand if you want them:</p>
+<ul>
+  <li><strong>Contact</strong> — create a page, then in the page's template dropdown choose <code>page.contact</code>. The contact form section supplies the intro copy and the form itself.</li>
+  <li><strong>About, shipping, returns</strong> — ordinary pages using the default <code>page</code> template. The footer menus are the usual place to link them.</li>
+</ul>
+
+<h3 id="country-and-language-selectors">Country and language selectors</h3>
+<p>The footer contains one form that submits country and language together. Each selector only renders when it has something to choose from:</p>
+<ul>
+  <li>Add countries under <strong>Settings → Markets</strong>; the selector appears once there is more than one.</li>
+  <li>Add languages under <strong>Settings → Languages</strong>; same rule.</li>
+  <li>The current choice is remembered per session, and prices update to the local market's currency.</li>
+</ul>
+
+<div class="tip">
+<strong>Worth testing once</strong>
+<p>Switch the selector to a market with a different currency and open a product. Prices on the product page, the grids and the cart should all change together. If one of them does not, that market is missing a price adjustment.</p>
+</div>
+
+<h3 id="replace-the-demo-pieces">Replace the demo pieces</h3>
+<p><em>Featured looks</em> and <em>Product grid</em> ship with <code>source</code> set to <code>demo</code>. Open each section in the editor and switch the source to a collection or a hand-picked product list. See <a href="sections.html">Section reference</a> for the rest of their settings.</p>
+
+<h2 id="go-live-checklist">Go-live checklist</h2>
+<ul>
+  <li><strong>Password protection off.</strong> <em>Online Store → Preferences</em>. A password-protected store hides the theme from everyone but you, and it is the single most common reason a Theme Store reviewer or a customer sees the wrong page.</li>
+  <li><strong>Store email set.</strong> It appears in order notifications, not in this theme, but customers will use it when the contact form fails.</li>
+  <li><strong>Policies filled in.</strong> Refund, privacy and terms — checkout links to them.</li>
+  <li><strong>Payment and shipping configured.</strong> The theme cannot test checkout for you.</li>
+  <li><strong>Phone pass.</strong> Open the storefront on a real phone at 390px wide. Check the header, the runway and the cart drawer; those three are where narrow screens break first.</li>
+</ul>
+
+<div class="warn">
+<strong>If the storefront looks unstyled</strong>
+<p>A theme that renders as plain HTML means its stylesheet did not load — usually a network or CDN hiccup, not a theme bug. Reload once. If it persists, check that <code>assets/pawform.css</code> appears in the theme's file list; a failed upload can drop a single asset.</p>
+</div>
+    <div class="pager"><a class="pager__prev" href="index.html"><span>Previous</span>Overview</a><a class="pager__next" href="settings.html"><span>Next</span>Theme settings</a></div>
+  </main>
+
+  <aside class="toc" aria-label="On this page">
+    <p class="toc__label">On this page</p>
+    <ul>
+      <li><a href="#before-you-start">Before you start</a>
+      </li>
+      <li><a href="#install">Install</a>
+        <ul>
+          <li><a href="#from-the-theme-store">From the Theme Store</a></li>
+          <li><a href="#from-a-zip-file">From a zip file</a></li>
+        </ul>
+      </li>
+      <li><a href="#connect-the-content">Connect the content</a>
+        <ul>
+          <li><a href="#menus">Menus</a></li>
+          <li><a href="#pages-the-templates-expect">Pages the templates expect</a></li>
+          <li><a href="#country-and-language-selectors">Country and language selectors</a></li>
+          <li><a href="#replace-the-demo-pieces">Replace the demo pieces</a></li>
+        </ul>
+      </li>
+      <li><a href="#go-live-checklist">Go-live checklist</a>
+      </li>
+    </ul>
+  </aside>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <span class="site-footer__script">Dressed with love.</span>
+    <span>PetPet Theme v1.0.2 — documentation for Shopify Online Store 2.0.</span>
+    <span>Fonts bundled under SIL OFL 1.1 · <a href="assets/PF-FONT-LICENSES.txt">licences</a></span>
+    <span style="margin-left:auto"><a href="support.html">Support</a> · <a href="changelog.html">Changelog</a> · <a href="https://github.com/github-oneyue/petpet-theme-docs">Repository</a></span>
+  </div>
+</footer>
+
+<script src="assets/docs.js"></script>
+</body>
+</html>

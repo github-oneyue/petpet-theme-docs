@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — PetPet Theme</title>
+<meta name="description" content="How to get help, what to include in a request and what is covered.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Support — PetPet Theme">
+<meta property="og:description" content="How to get help, what to include in a request and what is covered.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://github-oneyue.github.io/petpet-theme-docs/support.html">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/pf-dmsans-001.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/pf-iserif-003.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/docs.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <a class="topbar__brand" href="index.html"><b>PetPet</b><span>Theme documentation</span></a>
+  <div class="topbar__spacer"></div>
+  <div class="topbar__links">
+    <span class="pill" title="Documentation build">v1.0.2</span>
+    <a class="pill" href="support.html">Support</a>
+    <a class="pill pill--ink" href="https://github.com/github-oneyue/petpet-theme-docs">GitHub</a>
+    <button id="navToggle" type="button" aria-expanded="false" aria-controls="sidebar">Contents</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+    <div class="sidebar__inner">
+    <div class="sidebar__group">
+      <p class="sidebar__label">Start here</p>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="install.html">Installation</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <p class="sidebar__label">Reference</p>
+      <ul>
+        <li><a href="settings.html">Theme settings</a></li>
+        <li><a href="sections.html">Sections</a></li>
+        <li><a href="products.html">Product & cart</a></li>
+        <li><a href="accounts.html">Customer accounts</a></li>
+        <li><a href="typography.html">Typography & fonts</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <p class="sidebar__label">Help</p>
+      <ul>
+        <li><a href="faq.html">FAQ & troubleshooting</a></li>
+        <li><a href="support.html" aria-current="page">Support</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+
+  <main class="content" id="main">
+<p class="eyebrow">Help</p>
+<h1>Support</h1>
+<p class="lede">One person reads every message. Sending the right details in the first message is the difference between a fix today and a week of round trips.</p>
+
+<h2 id="how-to-reach-us">How to reach us</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Channel</th><th>Use it for</th><th>Reply time</th></tr></thead>
+    <tbody>
+      <tr><td><a href="mailto:oneyue24@gmail.com">oneyue24@gmail.com</a></td><td>Anything private: order problems, a store URL you would rather not publish, licence questions.</td><td>Within 2 business days</td></tr>
+      <tr><td><a href="https://github.com/github-oneyue/petpet-theme-docs/issues">GitHub issues</a></td><td>Reproducible bugs in the theme itself. Public, so others can find the answer.</td><td>Within 2 business days</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Support is provided in English and Chinese. Replies come from a person, not a ticket robot, and are sent during GMT+8 business hours.</p>
+
+<h2 id="what-to-include">What to include</h2>
+<p>A message with these five things can usually be answered in one reply:</p>
+<ol class="steps">
+  <li><b>Theme version</b><span>The number in the theme editor footer, or in <code>config/settings_schema.json</code> as <code>theme_version</code>. Currently <code>1.0.2</code>.</span></li>
+  <li><b>Your store URL</b><span>Even a password-protected one. A <code>.myshopify.com</code> address is enough.</span></li>
+  <li><b>What you expected, and what happened</b><span>"The footer country selector should appear, it does not" is actionable. "The footer is broken" is not.</span></li>
+  <li><b>Steps to reproduce</b><span>Page, what you clicked, in what order. If it only happens on a phone, say which.</span></li>
+  <li><b>A screenshot or a screen recording</b><span>For anything visual. Include the browser's developer console if there is an error — the first line is usually the useful one.</span></li>
+</ol>
+
+<div class="tip">
+<strong>Faster answers</strong>
+<p>The <a href="faq.html">FAQ</a> covers the five most common reports: demo pieces that cannot be bought, missing filters, missing country selectors, disappearing saved looks, and account pages that redirect to shopify.com. All five are settings or Shopify behaviour rather than theme faults.</p>
+</div>
+
+<h2 id="what-is-covered">What is covered</h2>
+<ul>
+  <li><strong>Bugs</strong> in the theme: layout faults, broken interactions, accessibility regressions, anything that differs between two installs of the same version.</li>
+  <li><strong>Setup questions</strong>: which setting does what, how to get a section to look like the demo, why a Shopify feature behaves as it does.</li>
+  <li><strong>Licence questions</strong>: what the bundled fonts allow, whether a use is permitted.</li>
+</ul>
+
+<h3 id="what-is-not-covered">What is not covered</h3>
+<ul>
+  <li><strong>Custom code.</strong> Editing Liquid, adding scripts or building new sections is outside support scope. We will tell you where the relevant file is; we will not write the change for you.</li>
+  <li><strong>Third-party apps.</strong> Problems that appear only after installing an app belong with that app's developer first.</li>
+  <li><strong>Shopify itself.</strong> Billing, checkout configuration, domain setup and shipping rates are Shopify support's territory. The theme cannot change them.</li>
+  <li><strong>Content work.</strong> Writing copy, editing photographs, choosing a colour palette.</li>
+</ul>
+
+<h2 id="version-support">Version support</h2>
+<p>Fixes are made against the current version and released as an update. Older versions are not patched separately; if a bug affects an older version, updating is the fix. The <a href="changelog.html">changelog</a> lists what changed in each release, so you can judge whether updating is worth the re-check of your customised sections.</p>
+
+<div class="note">
+<strong>Before reporting a visual bug</strong>
+<p>Test once in a private window with extensions disabled. Several browser extensions inject their own CSS and markup into pages, and the resulting breakage looks exactly like a theme fault while appearing in no one else's store.</p>
+</div>
+
+<h2 id="security">Security</h2>
+<p>If you believe you have found a security issue in the theme, email rather than opening a public issue, and include enough detail to reproduce it. Please allow reasonable time for a fix before disclosing it publicly.</p>
+    <div class="pager"><a class="pager__prev" href="faq.html"><span>Previous</span>FAQ & troubleshooting</a><a class="pager__next" href="changelog.html"><span>Next</span>Changelog</a></div>
+  </main>
+
+  <aside class="toc" aria-label="On this page">
+    <p class="toc__label">On this page</p>
+    <ul>
+      <li><a href="#how-to-reach-us">How to reach us</a>
+      </li>
+      <li><a href="#what-to-include">What to include</a>
+      </li>
+      <li><a href="#what-is-covered">What is covered</a>
+        <ul>
+          <li><a href="#what-is-not-covered">What is not covered</a></li>
+        </ul>
+      </li>
+      <li><a href="#version-support">Version support</a>
+      </li>
+      <li><a href="#security">Security</a>
+      </li>
+    </ul>
+  </aside>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <span class="site-footer__script">Dressed with love.</span>
+    <span>PetPet Theme v1.0.2 — documentation for Shopify Online Store 2.0.</span>
+    <span>Fonts bundled under SIL OFL 1.1 · <a href="assets/PF-FONT-LICENSES.txt">licences</a></span>
+    <span style="margin-left:auto"><a href="support.html">Support</a> · <a href="changelog.html">Changelog</a> · <a href="https://github.com/github-oneyue/petpet-theme-docs">Repository</a></span>
+  </div>
+</footer>
+
+<script src="assets/docs.js"></script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product page and cart — PetPet Theme</title>
+<meta name="description" content="Product template blocks, variant handling, structured data and the cart drawer.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Product page and cart — PetPet Theme">
+<meta property="og:description" content="Product template blocks, variant handling, structured data and the cart drawer.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://github-oneyue.github.io/petpet-theme-docs/products.html">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/pf-dmsans-001.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/pf-iserif-003.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/docs.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <a class="topbar__brand" href="index.html"><b>PetPet</b><span>Theme documentation</span></a>
+  <div class="topbar__spacer"></div>
+  <div class="topbar__links">
+    <span class="pill" title="Documentation build">v1.0.2</span>
+    <a class="pill" href="support.html">Support</a>
+    <a class="pill pill--ink" href="https://github.com/github-oneyue/petpet-theme-docs">GitHub</a>
+    <button id="navToggle" type="button" aria-expanded="false" aria-controls="sidebar">Contents</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+    <div class="sidebar__inner">
+    <div class="sidebar__group">
+      <p class="sidebar__label">Start here</p>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="install.html">Installation</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <p class="sidebar__label">Reference</p>
+      <ul>
+        <li><a href="settings.html">Theme settings</a></li>
+        <li><a href="sections.html">Sections</a></li>
+        <li><a href="products.html" aria-current="page">Product & cart</a></li>
+        <li><a href="accounts.html">Customer accounts</a></li>
+        <li><a href="typography.html">Typography & fonts</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <p class="sidebar__label">Help</p>
+      <ul>
+        <li><a href="faq.html">FAQ & troubleshooting</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+
+  <main class="content" id="main">
+<p class="eyebrow">Reference</p>
+<h1>Product page and cart</h1>
+<p class="lede">The product template is assembled from blocks, which means the order of the page is yours to change in the editor rather than in code. This page covers that order, the variant picker, structured data and how the cart drawer decides to open.</p>
+
+<h2 id="block-order">Block order</h2>
+<p>Everything below is a block inside the <em>Product</em> section. Up to 30 blocks are allowed; the single-use blocks are marked with their limit. The shipped order is vendor, title, price, variant picker, buy buttons, stock, details, share.</p>
+
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Block</th><th>What it renders</th><th>Own settings</th></tr></thead>
+    <tbody>
+      <tr><td><code>vendor</code></td><td>The product vendor as a small caption above the title. Single use.</td><td>—</td></tr>
+      <tr><td><code>title</code></td><td>The product title as the page's <code>h1</code>. Single use.</td><td>—</td></tr>
+      <tr><td><code>price</code></td><td>Price, compare-at price, and the sale badge. Single use.</td><td><code>show_badge</code>, <code>show_unit_price</code></td></tr>
+      <tr><td><code>options</code></td><td>The variant picker. Renders dropdowns, or swatches when the option is mapped to a swatch. Single use.</td><td><code>swatch_option</code></td></tr>
+      <tr><td><code>buy_buttons</code></td><td>Add to bag, quantity, and the dynamic checkout button. Single use.</td><td><code>show_quantity</code>, <code>show_payment_button</code></td></tr>
+      <tr><td><code>stock</code></td><td>In-stock or sold-out line, driven by the variant's inventory policy. Single use.</td><td><code>in_stock_text</code>, <code>out_stock_text</code></td></tr>
+      <tr><td><code>description</code></td><td>The product description, optionally truncated with a "read more" toggle. Single use.</td><td><code>truncate</code></td></tr>
+      <tr><td><code>details</code></td><td>The accordion rows: description, shipping and returns, and specifications. Single use.</td><td><code>show_description_row</code>, <code>show_shipping</code>, <code>shipping_text</code>, <code>show_spec</code></td></tr>
+      <tr><td><code>selling_plan</code></td><td>Subscription or pre-order options, when the product has selling plans. Single use.</td><td>—</td></tr>
+      <tr><td><code>pickup</code></td><td>Local pickup availability for the selected variant. Single use.</td><td>—</td></tr>
+      <tr><td><code>share</code></td><td>Share links for the product. Single use.</td><td>—</td></tr>
+      <tr><td><code>text</code></td><td>Free text block — sizing notes, care instructions, a styling tip. Repeatable.</td><td><code>text</code></td></tr>
+      <tr><td><code>custom_liquid</code></td><td>Your own Liquid. Repeatable.</td><td><code>custom_liquid</code></td></tr>
+      <tr><td><code>@app</code></td><td>Blocks injected by installed apps. Repeatable.</td><td>Defined by the app</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="note">
+<strong>One of each</strong>
+<p>Single-use blocks cannot be duplicated in the editor — the button is simply absent. If you need the same content twice, use a <code>text</code> block instead of a second title or description.</p>
+</div>
+
+<h2 id="variants-stock-and-prices">Variants, stock and prices</h2>
+<p>None of this is stored in the theme. The variant picker reads <code>product.options</code>; the price block reads the selected variant's <code>price</code> and <code>compare_at_price</code>; the stock block reads <code>inventory_quantity</code> and <code>inventory_policy</code>. Practical consequences:</p>
+<ul>
+  <li>A variant that continues selling at zero stock shows the in-stock line, because Shopify allows the sale. That is Shopify's rule, not the theme's.</li>
+  <li>Unit prices appear only when the product has a unit price measurement set in admin.</li>
+  <li>Changing a price in admin changes the storefront without touching the theme.</li>
+</ul>
+
+<h2 id="structured-data">Structured data</h2>
+<p>The product section outputs Product JSON-LD so search engines can read price, availability and currency. It is on by default (<code>show_jsonld</code>). Leave it on unless another app is already emitting Product markup — two competing blocks of JSON-LD on one page is worse than none.</p>
+
+<h2 id="related-pieces">Related pieces</h2>
+<p><code>show_related</code> adds a strip of products from the same collection below the product, with <code>related_limit</code> controlling how many. Shopify chooses which products; the theme only decides how they look. On a product that belongs to no collection, the strip does not render.</p>
+
+<h2 id="the-cart-drawer">The cart drawer</h2>
+<p>With <code>enable_cart_drawer</code> on, adding a product posts to Shopify's cart API and opens a drawer instead of navigating away. The drawer lists line items with quantity steppers, a subtotal, and a link to the full cart page.</p>
+<p>The bag icon in the header always links to <code>/cart</code>. That is deliberate: the drawer is an accelerator, not a replacement, and it must be possible to reach the cart with a keyboard and with JavaScript disabled.</p>
+
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Behaviour</th><th>Where it is decided</th></tr></thead>
+    <tbody>
+      <tr><td>Drawer opens after add to bag</td><td><code>enable_cart_drawer</code> in <a href="settings.html#cart-and-checkout">Cart and checkout</a></td></tr>
+      <tr><td>Drawer suppressed entirely</td><td>Same setting off — the product form falls back to a normal post to <code>/cart</code></td></tr>
+      <tr><td>Quantity steppers inside the drawer</td><td>Always present; they call the cart change endpoint and re-render the drawer</td></tr>
+      <tr><td>Checkout button</td><td>Shopify's own, with whatever payment methods the store has enabled</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 id="cart-page">Cart page</h2>
+<p>The cart page is a separate template and stays reachable regardless of the drawer. Its settings are copy only — heading, subheading, the empty-bag message, and an optional note about how checkout is handled.</p>
+<p><code>show_note</code> toggles the note block; <code>note</code> is the text inside it. Keep that text factual: it sits directly above the checkout button, where customers are most likely to read it.</p>
+
+<h2 id="product-settings-that-are-not-blocks">Product settings that are not blocks</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Setting</th><th>Effect</th></tr></thead>
+    <tbody>
+      <tr><td><code>stock_text</code></td><td>Fallback in-stock label used when the stock block has no custom text. Defaults to "In stock · ships in 2–4 working days".</td></tr>
+      <tr><td><code>show_jsonld</code></td><td>Emits Product structured data. On by default.</td></tr>
+      <tr><td><code>show_related</code></td><td>Shows the related-pieces strip.</td></tr>
+      <tr><td><code>related_limit</code></td><td>How many related products to show, 1 to 12.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="tip">
+<strong>Two global settings also land here</strong>
+<p>The product page reads <code>pdp_stock_text</code> and <code>pdp_shipping_text</code> from <a href="settings.html#product-and-details">Product and details</a> for its shipping accordion, so the same sentence appears on the home-page product panel and on every product page. Edit it once, in the global settings.</p>
+</div>
+    <div class="pager"><a class="pager__prev" href="sections.html"><span>Previous</span>Sections</a><a class="pager__next" href="accounts.html"><span>Next</span>Customer accounts</a></div>
+  </main>
+
+  <aside class="toc" aria-label="On this page">
+    <p class="toc__label">On this page</p>
+    <ul>
+      <li><a href="#block-order">Block order</a>
+      </li>
+      <li><a href="#variants-stock-and-prices">Variants, stock and prices</a>
+      </li>
+      <li><a href="#structured-data">Structured data</a>
+      </li>
+      <li><a href="#related-pieces">Related pieces</a>
+      </li>
+      <li><a href="#the-cart-drawer">The cart drawer</a>
+      </li>
+      <li><a href="#cart-page">Cart page</a>
+      </li>
+      <li><a href="#product-settings-that-are-not-blocks">Product settings that are not blocks</a>
+      </li>
+    </ul>
+  </aside>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <span class="site-footer__script">Dressed with love.</span>
+    <span>PetPet Theme v1.0.2 — documentation for Shopify Online Store 2.0.</span>
+    <span>Fonts bundled under SIL OFL 1.1 · <a href="assets/PF-FONT-LICENSES.txt">licences</a></span>
+    <span style="margin-left:auto"><a href="support.html">Support</a> · <a href="changelog.html">Changelog</a> · <a href="https://github.com/github-oneyue/petpet-theme-docs">Repository</a></span>
+  </div>
+</footer>
+
+<script src="assets/docs.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Theme settings — PetPet Theme</title>
+<meta name="description" content="Every global setting in the theme editor: brand, runway, product copy, colours, typography, layout.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Theme settings — PetPet Theme">
+<meta property="og:description" content="Every global setting in the theme editor: brand, runway, product copy, colours, typography, layout.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://github-oneyue.github.io/petpet-theme-docs/settings.html">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/pf-dmsans-001.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/pf-iserif-003.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/docs.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <a class="topbar__brand" href="index.html"><b>PetPet</b><span>Theme documentation</span></a>
+  <div class="topbar__spacer"></div>
+  <div class="topbar__links">
+    <span class="pill" title="Documentation build">v1.0.2</span>
+    <a class="pill" href="support.html">Support</a>
+    <a class="pill pill--ink" href="https://github.com/github-oneyue/petpet-theme-docs">GitHub</a>
+    <button id="navToggle" type="button" aria-expanded="false" aria-controls="sidebar">Contents</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+    <div class="sidebar__inner">
+    <div class="sidebar__group">
+      <p class="sidebar__label">Start here</p>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="install.html">Installation</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <p class="sidebar__label">Reference</p>
+      <ul>
+        <li><a href="settings.html" aria-current="page">Theme settings</a></li>
+        <li><a href="sections.html">Sections</a></li>
+        <li><a href="products.html">Product & cart</a></li>
+        <li><a href="accounts.html">Customer accounts</a></li>
+        <li><a href="typography.html">Typography & fonts</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <p class="sidebar__label">Help</p>
+      <ul>
+        <li><a href="faq.html">FAQ & troubleshooting</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+
+  <main class="content" id="main">
+<p class="eyebrow">Reference</p>
+<h1>Theme settings</h1>
+<p class="lede">The theme editor sidebar is organised into seven groups. This page lists every setting, the value it ships with, and what changing it actually does. Setting IDs are shown because they are what you will see in <code>settings_data.json</code> and in support tickets.</p>
+
+<div class="note">
+<strong>Where to find these</strong>
+<p>Shopify admin → <strong>Online Store → Themes → Customize</strong>. The groups below appear in the left sidebar, above the section list. Section-level settings live on <a href="sections.html">their own page</a>.</p>
+</div>
+
+<h2 id="how-defaults-work">How defaults work</h2>
+<p>The values in this documentation are the ones baked into <code>config/settings_data.json</code> at install time. Changing a setting only affects the store you are editing; reinstalling the theme resets them. If you build a second storefront from the same theme, its settings start fresh.</p>
+
+<h2 id="brand-and-copy">Brand and copy</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>logo</code></td><td>Brand logo<br><span style="color:#8d8983">Replaces the header wordmark when set. Leave empty to use the brand names below.</span></td><td>image</td><td><span style="color:#8d8983">—</span></td></tr>
+        <tr><td><code>logo_width</code></td><td>Logo width</td><td>slider</td><td><span title="112">112</span></td></tr>
+        <tr><td><code>brand_name</code></td><td>Brand name</td><td>text</td><td><span title="PetPet">PetPet</span></td></tr>
+        <tr><td><code>brand_tagline</code></td><td>Brand tagline (small line under the wordmark)</td><td>text</td><td><span title="DIGITAL WARDROBE">DIGITAL WARDROBE</span></td></tr>
+        <tr><td><code>ticker_text</code></td><td>Marquee headline</td><td>text</td><td><span title="A DIGITAL WARDROBE FOR THE WELL-DRESSED PET">A DIGITAL WARDROBE FOR THE WELL-DRESSED PET</span></td></tr>
+        <tr><td><code>ticker_sub</code></td><td>Marquee subline</td><td>text</td><td><span title="16 LOOKS · 48 PIECES · ONE VERY GOOD BOY">16 LOOKS · 48 PIECES · ONE VERY GOOD BOY</span></td></tr>
+        <tr><td><code>footer_byline</code></td><td>Footer byline</td><td>text</td><td><span title="I love life, but I love you even more.">I love life, but I love you even more.</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+<h2 id="runway-and-content">Runway and content</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>autoplay</code></td><td>Auto-rotate looks</td><td>checkbox</td><td>On</td></tr>
+        <tr><td><code>autoplay_speed</code></td><td>Rotation interval (ms)</td><td>slider</td><td><span title="4600">4600</span></td></tr>
+        <tr><td><code>pause_on_hover</code></td><td>Pause on hover</td><td>checkbox</td><td>On</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+<h2 id="product-and-details">Product and details</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>pdp_stock_text</code></td><td>In-stock label</td><td>text</td><td><span title="In stock · ships in 2–4 working days">In stock · ships in 2–4 working days</span></td></tr>
+        <tr><td><code>pdp_shipping_text</code></td><td>Shipping and returns copy</td><td>long text</td><td><span title="Orders leave within 2–4 working days; shipping and taxe…">Orders leave within 2–4 working days; shipping and taxe…</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+<h2 id="cart-and-checkout">Cart and checkout</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>enable_cart_drawer</code></td><td>Open a cart drawer when an item is added<br><span style="color:#8d8983">When turned off, shoppers land on the cart page instead.</span></td><td>checkbox</td><td>On</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+<h2 id="colours">Colours</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>accent_color</code></td><td>Accent colour</td><td>colour</td><td><span title="#c9757f">#c9757f</span></td></tr>
+        <tr><td><code>ink_color</code></td><td>Scheme 1 · text</td><td>colour</td><td><span title="#171614">#171614</span></td></tr>
+        <tr><td><code>paper_color</code></td><td>Scheme 1 · background</td><td>colour</td><td><span title="#ffffff">#ffffff</span></td></tr>
+        <tr><td><code>color_scheme_2_bg</code></td><td>Scheme 2 · background</td><td>colour</td><td><span title="#171614">#171614</span></td></tr>
+        <tr><td><code>color_scheme_2_fg</code></td><td>Scheme 2 · text</td><td>colour</td><td><span title="#ffffff">#ffffff</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+<h2 id="typography">Typography</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>type_body_font</code></td><td>Body and UI font</td><td>font</td><td><span title="assistant_n4">assistant_n4</span></td></tr>
+        <tr><td><code>type_heading_font</code></td><td>Heading and script font<br><span style="color:#8d8983">Used for large headings, quotes and italic serif lines.</span></td><td>font</td><td><span title="playfair_display_n4">playfair_display_n4</span></td></tr>
+        <tr><td><code>use_bundled_fonts</code></td><td>Use the bundled fonts (DM Sans, Instrument Serif, DM Mono)<br><span style="color:#8d8983">The bundled fonts are self-hosted under SIL OFL 1.1 as a design fallback. Turned off, the theme uses the Shopify fonts selected above.</span></td><td>checkbox</td><td>Off</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+<h2 id="layout-and-motion">Layout and motion</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Label</th><th>Type</th><th>Default</th></tr></thead>
+          <tbody>
+        <tr><td><code>type_scale</code></td><td>Base type scale (%)</td><td>slider</td><td><span title="100">100</span></td></tr>
+        <tr><td><code>heading_weight</code></td><td>Heading weight</td><td>dropdown</td><td><span title="700">700</span></td></tr>
+        <tr><td><code>button_radius</code></td><td>Button and input radius (px)</td><td>slider</td><td><span title="2">2</span></td></tr>
+        <tr><td><code>section_spacing</code></td><td>Section spacing (px)</td><td>slider</td><td><span title="72">72</span></td></tr>
+        <tr><td><code>reveal_animation</code></td><td>Fade sections in on scroll</td><td>checkbox</td><td>On</td></tr>
+        <tr><td><code>marquee_speed</code></td><td>Announcement scroll duration (seconds)</td><td>slider</td><td><span title="30">30</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    <div class="pager"><a class="pager__prev" href="install.html"><span>Previous</span>Installation</a><a class="pager__next" href="sections.html"><span>Next</span>Sections</a></div>
+  </main>
+
+  <aside class="toc" aria-label="On this page">
+    <p class="toc__label">On this page</p>
+    <ul>
+      <li><a href="#how-defaults-work">How defaults work</a>
+      </li>
+      <li><a href="#brand-and-copy">Brand and copy</a>
+      </li>
+      <li><a href="#runway-and-content">Runway and content</a>
+      </li>
+      <li><a href="#product-and-details">Product and details</a>
+      </li>
+      <li><a href="#cart-and-checkout">Cart and checkout</a>
+      </li>
+      <li><a href="#colours">Colours</a>
+      </li>
+      <li><a href="#typography">Typography</a>
+      </li>
+      <li><a href="#layout-and-motion">Layout and motion</a>
+      </li>
+    </ul>
+  </aside>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <span class="site-footer__script">Dressed with love.</span>
+    <span>PetPet Theme v1.0.2 — documentation for Shopify Online Store 2.0.</span>
+    <span>Fonts bundled under SIL OFL 1.1 · <a href="assets/PF-FONT-LICENSES.txt">licences</a></span>
+    <span style="margin-left:auto"><a href="support.html">Support</a> · <a href="changelog.html">Changelog</a> · <a href="https://github.com/github-oneyue/petpet-theme-docs">Repository</a></span>
+  </div>
+</footer>
+
+<script src="assets/docs.js"></script>
+</body>
+</html>

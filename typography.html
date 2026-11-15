@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Typography and fonts — PetPet Theme</title>
+<meta name="description" content="Bundled typefaces, Shopify font pickers, the type scale and licensing.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Typography and fonts — PetPet Theme">
+<meta property="og:description" content="Bundled typefaces, Shopify font pickers, the type scale and licensing.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://github-oneyue.github.io/petpet-theme-docs/typography.html">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/pf-dmsans-001.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/pf-iserif-003.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/docs.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <a class="topbar__brand" href="index.html"><b>PetPet</b><span>Theme documentation</span></a>
+  <div class="topbar__spacer"></div>
+  <div class="topbar__links">
+    <span class="pill" title="Documentation build">v1.0.2</span>
+    <a class="pill" href="support.html">Support</a>
+    <a class="pill pill--ink" href="https://github.com/github-oneyue/petpet-theme-docs">GitHub</a>
+    <button id="navToggle" type="button" aria-expanded="false" aria-controls="sidebar">Contents</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+    <div class="sidebar__inner">
+    <div class="sidebar__group">
+      <p class="sidebar__label">Start here</p>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="install.html">Installation</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <p class="sidebar__label">Reference</p>
+      <ul>
+        <li><a href="settings.html">Theme settings</a></li>
+        <li><a href="sections.html">Sections</a></li>
+        <li><a href="products.html">Product & cart</a></li>
+        <li><a href="accounts.html">Customer accounts</a></li>
+        <li><a href="typography.html" aria-current="page">Typography & fonts</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <p class="sidebar__label">Help</p>
+      <ul>
+        <li><a href="faq.html">FAQ & troubleshooting</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+
+  <main class="content" id="main">
+<p class="eyebrow">Reference</p>
+<h1>Typography and fonts</h1>
+<p class="lede">The theme has two independent font systems: Shopify's font pickers, which are the default, and four typefaces bundled with the theme and served from your own store. You can use either, and switching does not require code.</p>
+
+<h2 id="the-two-systems">The two systems</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th></th><th>Shopify font pickers</th><th>Bundled typefaces</th></tr></thead>
+    <tbody>
+      <tr><td>Setting</td><td><code>type_body_font</code>, <code>type_heading_font</code></td><td><code>use_bundled_fonts</code></td></tr>
+      <tr><td>Default</td><td>Assistant for body, Playfair Display for headings</td><td>Off</td></tr>
+      <tr><td>Files served from</td><td>Shopify's font CDN</td><td>Your store's <code>assets</code> folder</td></tr>
+      <tr><td>Choice</td><td>Several hundred families and weights</td><td>DM Sans, Instrument Serif, DM Mono, Noto Sans SC</td></tr>
+      <tr><td>Weight</td><td>Heavier — the theme loads only the weights it uses</td><td>Lighter — Latin subsets total roughly 180KB</td></tr>
+      <tr><td>Best for</td><td>Shops that want a familiar, neutral face</td><td>Shops that want the theme's own editorial character</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="note">
+<strong>They are not mixed</strong>
+<p>Turning on bundled fonts replaces both pickers at once; there is no per-element mixing. One reason is consistency, the other is weight: loading a Shopify font and a bundled font for the same role would double the request count for no visual gain.</p>
+</div>
+
+<h2 id="the-bundled-typefaces">The bundled typefaces</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Typeface</th><th>Used for</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>DM Sans</td><td>Body copy, navigation, buttons, form fields</td><td>Variable weight 400–700, two Latin subset files</td></tr>
+      <tr><td>Instrument Serif</td><td>Headlines, prices, the italic script lines</td><td>Roman and italic, four files</td></tr>
+      <tr><td>DM Mono</td><td>Eyebrows, labels, indices, the ticker</td><td>Weight 400 and 500, four files</td></tr>
+      <tr><td>Noto Sans SC</td><td>Chinese and Japanese text</td><td>Split into 101 range-limited files; the browser fetches only the ranges a page actually needs</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>All four are licensed under the SIL Open Font License 1.1, which permits commercial use and self-hosting. The full texts ship with the theme at <a href="assets/PF-FONT-LICENSES.txt">assets/PF-FONT-LICENSES.txt</a> — keep that file in place, since the licence requires it to travel with the fonts.</p>
+
+<h2 id="the-type-scale">The type scale</h2>
+<p><code>type_scale</code> is a percentage, 100 by default. It multiplies every font size in the theme — body, headings, navigation, captions, table text — rather than only the body copy. Merchants who find the default too small can raise it to 110 and get a proportionally larger theme without a single layout change.</p>
+<p>The sizes it drives:</p>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Role</th><th>At 100%</th><th>Examples</th></tr></thead>
+    <tbody>
+      <tr><td>Body</td><td>15.5px</td><td>Paragraphs, product descriptions</td></tr>
+      <tr><td>Lead</td><td>15px</td><td>Section intros, the lede under a heading</td></tr>
+      <tr><td>Body small</td><td>14px</td><td>Card text, form help, footer copy</td></tr>
+      <tr><td>Interface</td><td>13.5px</td><td>Buttons, tabs, quantity steppers</td></tr>
+      <tr><td>Navigation</td><td>12.5px</td><td>Header and footer menus</td></tr>
+      <tr><td>Meta</td><td>12px</td><td>Captions, product meta, breadcrumbs</td></tr>
+      <tr><td>Label</td><td>11.5px</td><td>Form labels, table headers</td></tr>
+      <tr><td>Mini</td><td>11px</td><td>The smallest text a merchant should ever put content in</td></tr>
+      <tr><td>Block heading</td><td>17px</td><td>Card and panel headings</td></tr>
+      <tr><td>Input</td><td>16px floor</td><td>Every text field, never smaller</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="tip">
+<strong>The 16px floor is deliberate</strong>
+<p>iOS Safari zooms the whole viewport when a focused field's text is smaller than 16px. The input size is therefore clamped at 16px even if the type scale is set lower, which keeps forms usable on a phone without disabling pinch zoom.</p>
+</div>
+
+<h2 id="heading-weight">Heading weight</h2>
+<p><code>heading_weight</code> sets the weight used by display headings: 500, 600, 700 (default) or 800. With the bundled Instrument Serif only 400 exists, so this setting has no effect while bundled fonts are on — the serif face is designed to carry weight through size rather than boldness. With a Shopify font selected, the setting works as expected.</p>
+
+<h2 id="what-is-intentionally-tiny">What is intentionally tiny</h2>
+<p>Some text sits at 9–10px on purpose: the announcement ticker, eyebrow labels above headings, the <code>SET 01/16</code> indices on cards, and the decorative quotation mark. These are graphic elements rather than reading matter. No content a customer needs in order to buy is set below 11px.</p>
+
+<div class="warn">
+<strong>Changing fonts and existing content</strong>
+<p>Switching between the two font systems changes the width of every heading. Long headlines may reflow onto an extra line, and any section whose copy was written to fit exactly may now overflow. Re-read the home page after switching — that is a layout check, not a bug report.</p>
+</div>
+    <div class="pager"><a class="pager__prev" href="accounts.html"><span>Previous</span>Customer accounts</a><a class="pager__next" href="faq.html"><span>Next</span>FAQ & troubleshooting</a></div>
+  </main>
+
+  <aside class="toc" aria-label="On this page">
+    <p class="toc__label">On this page</p>
+    <ul>
+      <li><a href="#the-two-systems">The two systems</a>
+      </li>
+      <li><a href="#the-bundled-typefaces">The bundled typefaces</a>
+      </li>
+      <li><a href="#the-type-scale">The type scale</a>
+      </li>
+      <li><a href="#heading-weight">Heading weight</a>
+      </li>
+      <li><a href="#what-is-intentionally-tiny">What is intentionally tiny</a>
+      </li>
+    </ul>
+  </aside>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <span class="site-footer__script">Dressed with love.</span>
+    <span>PetPet Theme v1.0.2 — documentation for Shopify Online Store 2.0.</span>
+    <span>Fonts bundled under SIL OFL 1.1 · <a href="assets/PF-FONT-LICENSES.txt">licences</a></span>
+    <span style="margin-left:auto"><a href="support.html">Support</a> · <a href="changelog.html">Changelog</a> · <a href="https://github.com/github-oneyue/petpet-theme-docs">Repository</a></span>
+  </div>
+</footer>
+
+<script src="assets/docs.js"></script>
+</body>
+</html>
